@@ -2,6 +2,8 @@ package ColorClickerClient.Logic;
 
 import ColorClickerClient.Logic.REST.ColorClickerClientRESTLogic;
 import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageCreator;
+import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageReader;
+import ColorClickerClient.Logic.Websockets.ColorClickerEventClientSocket;
 import ColorClickerClient.View.sceneController;
 import ColorClickerClient.View.sceneGame;
 import Models.Color;
@@ -17,15 +19,18 @@ public class ColorClickerClientLogic {
     private int userId;
     private sceneController controller;
     private ColorClickerClientRESTLogic REST;
+    private ColorClickerEventClientSocket clientSocket;
+    private ColorClickerClientMessageReader handler;
 
     public ColorClickerClientLogic(sceneController controller, Scene scene){
         messageCreator = new ColorClickerClientMessageCreator();
         this.controller = controller;
         REST = new ColorClickerClientRESTLogic();
+        handler = new ColorClickerClientMessageReader(this);
+        clientSocket = new ColorClickerEventClientSocket(handler);
     }
 
     public void SignIn(String email, String password){
-        //Rest
         userId = REST.SignIn(messageCreator.MessageCreator("SignIn", new SignIn(email,password)));
         if (userId != 0){
             controller.homeScene();
@@ -34,7 +39,7 @@ public class ColorClickerClientLogic {
 
     public void SignUp(String email, String password, String name){
         userId = REST.SignIn(messageCreator.MessageCreator("SignUp", new SignUp(email,password, name)));
-        //rest
+
         if (userId != 0){
             controller.homeScene();
         }
@@ -44,13 +49,20 @@ public class ColorClickerClientLogic {
         messageCreator.MessageCreator("CreateGame", new CreateGame(gametype));
     }
 
+    public void CreateGameReceive(String gamecode, String playerName){
+        //TODO make new game scene
+    }
+
+    public void JoinGameReceived(String gamecode, String player1Name, String player2Name){
+        //TODO make new game scene
+    }
+
     public void JoinGameSend(String gameCode){
         messageCreator.MessageCreator("JoinGame", gameCode);
     }
 
     public String[][] GetHighscores(){
-        //Rest
-        return new String[3][];
+        return REST.getHighscores();
     }
 
     public void SquareClick(int xPos, int yPos){
@@ -64,9 +76,5 @@ public class ColorClickerClientLogic {
 
     public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos){
         game.UpdateSquares(squareColor, xPos, yPos);
-    }
-
-    public void SelectColor(Color squareColor){
-
     }
 }

@@ -1,4 +1,4 @@
-package DiaVDKlasjes.KlassenDiagram;
+package ColorClickerWebsocketServer;
 
 public class ColorClickerWebsocketRESTLogic {
 }

@@ -5,13 +5,6 @@ import Models.Color;
 public interface IColorClickerWebsocketLogic {
 
 	/**
-	 * @param email
-	 * @param password
-	 * @param name
-	 */
-	public int SignUp(String email, String password, String name);
-
-	/**
 	 * @param gametype
 	 */
 	public char CreateGame(int gametype);
@@ -20,13 +13,6 @@ public interface IColorClickerWebsocketLogic {
 	 * @param gameCode
 	 */
 	public boolean JoinGame(String gameCode);
-
-	public String[][] GetHighscores();
-
-	/**
-	 * @param squareColor
-	 */
-	public void SelectColor(Color squareColor);
 
 	/**
 	 * @param xPos

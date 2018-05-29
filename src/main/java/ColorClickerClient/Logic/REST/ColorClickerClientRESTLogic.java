@@ -1,5 +1,7 @@
 package ColorClickerClient.Logic.REST;
 
+import WebsocketModels.getHighscores;
+import WebsocketModels.jsonMessage;
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -70,11 +72,36 @@ public class ColorClickerClientRESTLogic {
 
         return result;
     }
-    public void Login(char email, char password){
 
-    }
+    public String[][] getHighscores(){
+        String[][] result = null;
 
-    public void Message(char path, char value){
+        final String query = "http://localhost:8091/ColorClicker/getHighscores";
 
+        System.out.println("[Query] : " + query);
+
+        // Perform the query
+        HttpGet httpGet = new HttpGet(query);
+
+        try (CloseableHttpClient httpClient = HttpClients.createDefault();
+             CloseableHttpResponse response = httpClient.execute(httpGet);) {
+            System.out.println("[Status Line] : " + response.getStatusLine());
+            HttpEntity entity = response.getEntity();
+            final String entityString = EntityUtils.toString(entity);
+            System.out.println("[Entity] : " + entityString);
+            Gson gson = new Gson();
+            Response jsonResponse = gson.fromJson(entityString,Response.class);
+            String stringResult = jsonResponse.getResult();
+            System.out.println("[Result] : " + stringResult );
+            gson = new Gson();
+            jsonMessage messageObject = gson.fromJson(stringResult, jsonMessage.class);
+            getHighscores object = (getHighscores)messageObject.getObject();
+            result = object.getHighscores();
+        } catch (IOException e) {
+            // Evil, pure evil this solution: ....
+            System.out.println("IOException : " + e.toString());
+        }
+
+        return result;
     }
 }
