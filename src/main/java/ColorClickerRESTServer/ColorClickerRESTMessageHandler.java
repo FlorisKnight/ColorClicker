@@ -19,6 +19,7 @@ public class ColorClickerRESTMessageHandler implements IColorClickerRESTMessageH
             case "SignIn": return logic.SignIn((SignIn)messageObject.getObject());
             case "GetHighscores": return logic.getHighscores();
             case "SetHighscore": return logic.saveScores((SaveScore)messageObject.getObject());
+            case "GetPlayer": return logic.getPlayer((int)messageObject.getObject());
         }
         return null;
     }

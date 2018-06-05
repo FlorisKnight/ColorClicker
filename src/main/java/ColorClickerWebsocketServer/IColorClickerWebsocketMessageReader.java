@@ -1,12 +1,11 @@
-package DiaVDKlasjes.KlassenDiagram;
+package ColorClickerWebsocketServer;
 
 public interface IColorClickerWebsocketMessageReader {
 
 	/**
 	 * 
-	 * @param jsonMessage
+	 * @param serverMessage
 	 * @param sessionId
 	 */
-	public void MessageReader(char jsonMessage, char sessionId);
-
+	public void MessageReader(String serverMessage, String sessionId);
 }

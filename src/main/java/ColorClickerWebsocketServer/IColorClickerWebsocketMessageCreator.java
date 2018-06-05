@@ -1,4 +1,4 @@
-package DiaVDKlasjes.KlassenDiagram;
+package ColorClickerWebsocketServer;
 
 public interface IColorClickerWebsocketMessageCreator {
 
@@ -8,6 +8,6 @@ public interface IColorClickerWebsocketMessageCreator {
 	 * @param object
 	 * @param sessionId
 	 */
-	public void MessageCreator(char action, Object object, char sessionId);
+	public void MessageCreator(String action, Object object, String sessionId);
 
 }

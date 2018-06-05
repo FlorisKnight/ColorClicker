@@ -1,16 +1,16 @@
 package WebsocketModels;
 
 public class CreateGameReceive {
-    private String gameCode;
+    private int gameID;
     private String playerName;
 
-    public CreateGameReceive(String gameCode, String playerName){
-        this.gameCode = gameCode;
+    public CreateGameReceive(int gameID, String playerName){
+        this.gameID = gameID;
         this.playerName = playerName;
     }
 
-    public String getGameCode() {
-        return gameCode;
+    public int getGameID() {
+        return gameID;
     }
 
     public String getPlayerName() {

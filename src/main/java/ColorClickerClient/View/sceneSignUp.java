@@ -1,5 +1,6 @@
 package ColorClickerClient.View;
 
+import ColorClickerClient.Logic.IColorClickerClientSignInSignUpLogic;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,8 +32,12 @@ public class sceneSignUp {
     //Controller
     sceneController controller;
 
-    public sceneSignUp(sceneController controller){
+    //Logic
+    IColorClickerClientSignInSignUpLogic logic;
+
+    public sceneSignUp(sceneController controller, IColorClickerClientSignInSignUpLogic logic){
         this.controller = controller;
+        scene = makeScene();
     }
 
     public Scene makeScene(){
@@ -53,9 +58,9 @@ public class sceneSignUp {
 
         //Hbox buttons
         // Button to SignIn
-        btnSignUp = new Button("Sign In");
+        btnSignUp = new Button("Sign Up");
         Tooltip tooltipStartGame =
-                new Tooltip("Press to sign in");
+                new Tooltip("Press to sign up");
         btnSignUp.setTooltip(tooltipStartGame);
         btnSignUp.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -64,9 +69,9 @@ public class sceneSignUp {
         });
 
         // Button toSignUp
-        btnBack = new Button("Sign Up");
+        btnBack = new Button("Back");
         Tooltip tooltipCollection =
-                new Tooltip("Press to sign up");
+                new Tooltip("Press to go back");
         btnBack.setTooltip(tooltipCollection);
         btnBack.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -89,11 +94,15 @@ public class sceneSignUp {
         return scene;
     }
 
+    public Scene getScene(){
+        return scene;
+    }
+
     public void Back(){
         controller.signInScene();
     }
 
     public void SignUp(){
-        controller.signUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
+        logic.SignUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
     }
 }

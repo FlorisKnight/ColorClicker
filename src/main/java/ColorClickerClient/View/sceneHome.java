@@ -1,5 +1,6 @@
 package ColorClickerClient.View;
 
+import ColorClickerClient.Logic.IColorClickerClientHighscoreLogic;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -25,8 +26,13 @@ public class sceneHome {
 
     //Controller
     sceneController controller;
-    public sceneHome(sceneController controller){
+
+    //Logic
+    IColorClickerClientHighscoreLogic logic;
+
+    public sceneHome(sceneController controller, IColorClickerClientHighscoreLogic logic){
         scene = makeScene();
+        this.logic = logic;
         this.controller = controller;
     }
 
@@ -85,6 +91,6 @@ public class sceneHome {
     }
 
     public void Highscores(){
-        controller.highscores();
+        logic.GetHighscores();
     }
 }

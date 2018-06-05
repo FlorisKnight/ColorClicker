@@ -1,5 +1,6 @@
 package ColorClickerClient.View;
 
+import ColorClickerClient.Logic.IColorClickerClientCreateJoinGameLogic;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -29,8 +30,12 @@ public class sceneCreateGame {
     //Controller
     sceneController controller;
 
-    public sceneCreateGame(sceneController controller){
+    //Logic
+    IColorClickerClientCreateJoinGameLogic logic;
+
+    public sceneCreateGame(sceneController controller, IColorClickerClientCreateJoinGameLogic logic){
         this.controller = controller;
+        this.logic = logic;
         scene = makeScene();
     }
 
@@ -96,7 +101,7 @@ public class sceneCreateGame {
     }
 
     public void CreateGame(String gameCode){
-        controller.createGame(gameCode);
+        logic.CreateGameSend(gameCode);
     }
 
     public void Back(){

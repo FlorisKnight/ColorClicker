@@ -3,9 +3,15 @@ package ColorClickerWebsocketServer;
 import WebsocketModels.jsonMessage;
 import com.google.gson.Gson;
 
-public class ColorClickerWebsocketMessageCreator {
-    public String MessageCreator(String action, Object object){
+public class ColorClickerWebsocketMessageCreator implements IColorClickerWebsocketMessageCreator{
+    ColorClickerEventServerSocket eventSockets;
+
+    public ColorClickerWebsocketMessageCreator(ColorClickerEventServerSocket eventSockets){
+        this.eventSockets = eventSockets;
+    }
+
+    public void MessageCreator(String action, Object object, String sessionId){
         Gson gson = new Gson();
-        return gson.toJson(new jsonMessage(action, object));
+        eventSockets.sendMessage(gson.toJson(new jsonMessage(action, object)), sessionId);
     }
 }

@@ -1,16 +1,12 @@
 package ColorClickerClient.View;
 
-import Models.Color;
+import ColorClickerClient.Logic.ColorClickerClientLogic;
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.*;
 import javafx.scene.shape.Rectangle;
 
@@ -18,13 +14,13 @@ import javafx.scene.shape.Rectangle;
 public class sceneGame {
     //Properties
     String gameCodeText = "Gamecode:";
-    String gameCode = "afaFSD876VKJVhkb";
-    String player1Name = "dafdsf";
-    String player2Name = "asdfasdf";
-    String player1Points = "4";
-    String player2Points = "24";
+    int gameID;
+    String player1Name;
+    String player2Name ;
+    String player1Points;
+    String player2Points;
     String timeLeftTxt = "Time left:";
-    String timeLeft = "45";
+    String timeLeft ;
 
     GridPane grid;
 
@@ -38,16 +34,30 @@ public class sceneGame {
     Label lblTimeLeftTxt;
     Label lblTimeLeft;
 
-    //Controller
-    sceneController controller;
-
     //Scene
     Scene scene;
 
-    //TODO generate 8x8
-    public sceneGame(sceneController controller){
-    this.controller = controller;
-    scene = makeScene();
+    //Logic
+    ColorClickerClientLogic logic;
+
+    public sceneGame(ColorClickerClientLogic logic, int gameID, String player){
+        scene = makeScene();
+        this.logic = logic;
+        this.gameID = gameID;
+        UpdateLabel(lblGameCode, String.valueOf(gameID));
+        this.player1Name = player;
+        UpdateLabel(lblPlayer1, player1Name);
+    }
+
+    public sceneGame(ColorClickerClientLogic logic, int gameID, String player1, String player2){
+        scene = makeScene();
+        this.logic = logic;
+        this.gameID = gameID;
+        UpdateLabel(lblGameCode, String.valueOf(gameID));
+        this.player1Name = player1;
+        UpdateLabel(lblPlayer1, player1Name);
+        this.player2Name = player2;
+        UpdateLabel(lblPlayer2, player2Name);
     }
 
     public Scene makeScene(){
@@ -93,6 +103,8 @@ public class sceneGame {
                 rec.setWidth(60);
                 rec.setHeight(60);
                 rec.setFill(javafx.scene.paint.Color.RED);
+                //rec.setOnMousePressed((EventHandler<javafx.scene.input.MouseEvent>) event -> SquareClick(GridPane.getRowIndex( rec),GridPane.getColumnIndex( rec);
+                rec.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_PRESSED, event -> SquareClick(GridPane.getRowIndex( rec),GridPane.getColumnIndex( rec)));
                 GridPane.setRowIndex(rec, row);
                 GridPane.setColumnIndex(rec, col);
                 grid.getChildren().addAll(rec);
@@ -101,7 +113,7 @@ public class sceneGame {
 
         //Labels
         lblGameTxt = new Label(gameCodeText);
-        lblGameCode = new Label(gameCode);
+        lblGameCode = new Label(String.valueOf(gameID));
         gameCodeHbox.getChildren().addAll(lblGameTxt,lblGameCode);
 
         lblPlayer1 = new Label(player1Name);
@@ -130,20 +142,36 @@ public class sceneGame {
         return scene;
     }
 
-    public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos){
+    private void SquareClick(int rowIndex, int columnIndex) {
+        logic.SquareClick(rowIndex, columnIndex);
+    }
 
+    public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos){
+        Rectangle rec = new Rectangle();
+        rec.setWidth(60);
+        rec.setHeight(60);
+        rec.setFill(squareColor);
+        grid.add(rec,xPos,yPos);
     }
 
     public void UpdatePlayerScore(int playerNr, int score){
         if (playerNr == 0){
             player1Points = String.valueOf(score);
+            lblPlayer1Points.setText(player1Points);
         } else if (playerNr == 1){
             player2Points = String.valueOf(score);
+            lblPlayer2Points.setText(player2Points);
         }
+    }
+
+    public void UpdatePlayerName(String playerName){
+        player2Name = playerName;
+        UpdateLabel(lblPlayer2, player2Name);
     }
 
     public void UpdateTime(int time){
         timeLeft = String.valueOf(time);
+        UpdateLabel(lblTimeLeft, timeLeft);
     }
 
     public void showMessage(final String message) {
@@ -158,5 +186,9 @@ public class sceneGame {
                 alert.showAndWait();
             }
         });
+    }
+
+    private void UpdateLabel(Label lbl, String text){
+        lbl.setText(text);
     }
 }

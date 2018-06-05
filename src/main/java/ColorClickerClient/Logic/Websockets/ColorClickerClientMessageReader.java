@@ -1,12 +1,8 @@
 package ColorClickerClient.Logic.Websockets;
 
 import ColorClickerClient.Logic.ColorClickerClientLogic;
-import ColorClickerClient.Logic.IColorClickerClientLogic;
-import ColorClickerClient.View.sceneGame;
-import WebsocketModels.EndGame;
-import WebsocketModels.UpdateSquare;
+import WebsocketModels.*;
 import com.google.gson.Gson;
-import WebsocketModels.jsonMessage;
 
 
 public class ColorClickerClientMessageReader implements IColorClickerClientWebsocketMessageReader{
@@ -20,12 +16,13 @@ public class ColorClickerClientMessageReader implements IColorClickerClientWebso
         jsonMessage messageObject = gson.fromJson(serverMessage, jsonMessage.class);
 
         switch (messageObject.getMessage()) {
-            case "CreateGameReceive": break;
-            case "JoinGameReceive": break;
-            case "EndGame": logic.EndGame(((EndGame)messageObject.getObject()).getPlayerName());break;
-            case "UpdateSquares": logic.UpdateSquares(((UpdateSquare)messageObject.getObject()).getColor(),((UpdateSquare)messageObject.getObject()).getxPos(),((UpdateSquare)messageObject.getObject()).getyPos());break;
-            case "UpdateTime": break;
-            case "UpdatePlayer": break;
+            case "CreateGameReceive":  logic.CreateGameReceive(((CreateGameReceive)messageObject.getObject()));break;
+            case "JoinGameReceive": logic.JoinGameReceived(((JoinGameReceive)messageObject.getObject())); break;
+            case "EndGame": logic.EndGame(((String)messageObject.getObject()));break;
+            case "UpdateSquares": logic.UpdateSquares(((UpdateSquare)messageObject.getObject()));break;
+            case "UpdatePlayerScore": logic.UpdatePlayerScore(((UpdatePlayerScore)messageObject.getObject()));break;
+            case "UpdatePlayerName": logic.UpdatePlayerName((String)messageObject.getObject());break;
+            case "UpdateTime": logic.UpdateTime((int)messageObject.getObject());break;
         }
     }
 

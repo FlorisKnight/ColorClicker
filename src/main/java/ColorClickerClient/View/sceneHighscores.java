@@ -64,13 +64,13 @@ public class sceneHighscores {
 
 
         // Leaderboard
-        lblPoints = new javafx.scene.control.Label("Score");
+        lblPoints = new Label("Score");
         gridLeaderboard.add(lblPoints, 1,1);
 
-        lblName = new javafx.scene.control.Label("Name");
+        lblName = new Label("Name");
         gridLeaderboard.add(lblName, 2,1);
 
-        lblGameType = new javafx.scene.control.Label("Gametype");
+        lblGameType = new Label("Gametype");
         gridLeaderboard.add(lblGameType, 2,1);
 
         for (int i = 0; i < highscores.length; ++i) {

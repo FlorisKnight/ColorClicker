@@ -1,5 +1,6 @@
 package ColorClickerClient.View;
 
+import ColorClickerClient.Logic.IColorClickerClientSignInSignUpLogic;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
@@ -31,8 +32,12 @@ public class sceneSignIn {
     //Controller
     sceneController controller;
 
-    public sceneSignIn(sceneController controller){
+    //Logic
+    IColorClickerClientSignInSignUpLogic logic;
+
+    public sceneSignIn(sceneController controller, IColorClickerClientSignInSignUpLogic logic){
         this.controller = controller;
+        this.logic = logic;
         scene = makeScene();
     }
 
@@ -96,7 +101,7 @@ public class sceneSignIn {
     }
 
     public void signIn(){
-        controller.signIn(txtEmail.getText(),txtPassword.getText());
+        logic.SignIn(txtEmail.getText(),txtPassword.getText());
     }
 
     public void signUp(){

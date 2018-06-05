@@ -1,14 +1,19 @@
 package WebsocketModels;
 
 public class CreateGame {
-    private int gametype;
+    private String gametype;
+    private int userId;
 
-    public CreateGame(int gametype) {
+    public CreateGame(String gametype, int userId) {
         this.gametype = gametype;
+        this.userId = userId;
     }
 
-    public int getGametype() {
+    public String getGametype() {
         return gametype;
     }
 
+    public int getUserId() {
+        return userId;
+    }
 }

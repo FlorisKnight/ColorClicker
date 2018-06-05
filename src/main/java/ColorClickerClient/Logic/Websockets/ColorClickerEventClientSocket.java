@@ -1,8 +1,6 @@
 package ColorClickerClient.Logic.Websockets;
 
-import ColorClickerClient.Logic.IColorClickerClientLogic;
 import ColorClickerClient.View.sceneGame;
-import javafx.scene.Scene;
 
 import javax.websocket.*;
 import java.io.IOException;
@@ -12,7 +10,6 @@ import java.net.URI;
 public class ColorClickerEventClientSocket{
 	IColorClickerClientWebsocketMessageReader handler;
 	private javax.websocket.Session session;
-	private IColorClickerClientLogic logic;
 	sceneGame game;
 
 	public ColorClickerEventClientSocket(IColorClickerClientWebsocketMessageReader handler){

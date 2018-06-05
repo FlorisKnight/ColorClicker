@@ -1,5 +1,6 @@
 package ColorClickerRESTServer;
 
+import Models.Player;
 import WebsocketModels.*;
 import com.google.gson.Gson;
 
@@ -33,9 +34,12 @@ public class ColorClickerRESTLogic{
         return "true";
     }
 
+    public String getPlayer(int playerID){
+        return databaseConn.getPlayer(playerID);
+    }
+
     private String packResponseToJson(String action, Object object){
         Gson gson = new Gson();
         return gson.toJson(new jsonMessage(action, object));
-
     }
 }

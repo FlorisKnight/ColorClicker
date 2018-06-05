@@ -1,18 +1,18 @@
 package WebsocketModels;
 
 public class JoinGameReceive {
-    private String gameCode;
+    private int gameID;
     private String player1Name;
     private String player2Name;
 
-    public JoinGameReceive(String gameCode, String player1Name, String player2Name){
-        this.gameCode = gameCode;
+    public JoinGameReceive(int gameID, String player1Name, String player2Name){
+        this.gameID = gameID;
         this.player1Name = player1Name;
         this.player2Name = player2Name;
     }
 
-    public String getGameCode() {
-        return gameCode;
+    public int getGameID() {
+        return gameID;
     }
 
     public String getPlayer1Name() {

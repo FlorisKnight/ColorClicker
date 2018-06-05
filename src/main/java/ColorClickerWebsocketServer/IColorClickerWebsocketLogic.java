@@ -1,31 +1,34 @@
-package DiaVDKlasjes.KlassenDiagram;
+package ColorClickerWebsocketServer;
 
 import Models.Color;
+import Models.Game;
+import WebsocketModels.*;
 
 public interface IColorClickerWebsocketLogic {
 
 	/**
-	 * @param gametype
+	 * @param object
 	 */
-	public char CreateGame(int gametype);
+	public void CreateGame(CreateGame object, String session);
 
 	/**
-	 * @param gameCode
+	 * @param object
 	 */
-	public boolean JoinGame(String gameCode);
+	public void JoinGame(JoinGame object, String session);
 
 	/**
-	 * @param xPos
-	 * @param yPos
+	 * @param object
 	 */
-	public void SquareClick(int xPos, int yPos);
+	public void SquareClick(SquareClick object, String session);
 
-	public void EndGame();
+	public void EndGame(String sessionID, String winner);
 
 	/**
 	 * @param squareColor
 	 * @param xPos
 	 * @param yPos
 	 */
-	public void UpdateSquares(Color squareColor, int xPos, int yPos);
+	public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos, String sessionID);
+
+	public void RemoveGame(Game game);
 }

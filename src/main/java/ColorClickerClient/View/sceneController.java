@@ -12,35 +12,24 @@ public class sceneController {
     sceneHighscores highscores;
     sceneCreateGame createGame;
     sceneJoinGame joinGame;
-    sceneGame game = new sceneGame(this);
+    sceneGame game;
 
     public sceneController(IColorClickerClientGUI application){
+        logic = new ColorClickerClientLogic(this, null);
         this.application = application;
-        signIn = new sceneSignIn(this);
-        signUp = new sceneSignUp(this);
-        home = new sceneHome(this);
-        createGame = new sceneCreateGame(this);
-        joinGame = new sceneJoinGame(this);
+        signIn = new sceneSignIn(this, logic);
+        signUp = new sceneSignUp(this, logic);
+        home = new sceneHome(this, logic);
+        createGame = new sceneCreateGame(this, logic);
+        joinGame = new sceneJoinGame(this, logic);
     }
 
     public void signInScene(){
         application.Draw(signIn.getScene());
     }
 
-    public void signIn(String email, String password){
-        if (true){
-            application.Draw(home.getScene());
-        }
-    }
-
     public void signUpScene(){
-        application.Draw(signIn.getScene());
-    }
-
-    public void signUp(String username, String email, String password){
-        if (true){
-            homeScene();
-        }
+        application.Draw(signUp.getScene());
     }
 
     public void homeScene(){
@@ -51,26 +40,16 @@ public class sceneController {
         application.Draw(createGame.getScene());
     }
 
-    public void createGame(String gameType){
-
-    }
-
     public void joinGameScene(){
         application.Draw(joinGame.getScene());
     }
 
-    public void joinGame(String gameCode){
-
+    public void highscores(String[][] highscoresList){
+        highscores = new sceneHighscores(this,highscoresList);
     }
 
-    public void highscores(){
-        highscores = new sceneHighscores(this,logic.GetHighscores());
-    }
-
-    public void game(){
-        Scene scene = game.makeScene();
-        application.Draw(scene);
-        logic = new ColorClickerClientLogic(this, scene);
+    public void game(sceneGame scene){
+        application.Draw(scene.makeScene());
     }
 
 

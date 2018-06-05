@@ -1,18 +1,23 @@
 package ColorClickerWebsocketServer;
 
-import WebsocketModels.jsonMessage;
+import WebsocketModels.*;
 import com.google.gson.Gson;
 
-public class ColorClickerWebsocketMessageReader {
-    public void MessageReader(String serverMessage){
-        Gson gson = new Gson();
-        jsonMessage messageObject = gson.fromJson(serverMessage, jsonMessage.class);
+public class ColorClickerWebsocketMessageReader implements IColorClickerWebsocketMessageReader{
+    IColorClickerWebsocketLogic logic;
 
-        //TODO Convert To Int????
+    public ColorClickerWebsocketMessageReader(IColorClickerWebsocketLogic logic){
+        this.logic = logic;
+    }
+
+    public void MessageReader(String serverMessage, String sessionId){
+        Gson gson = new Gson();
+        WebsocketModels.jsonMessage messageObject = gson.fromJson(serverMessage, jsonMessage.class);
+
         switch (messageObject.getMessage()) {
-            case "CreateGame": break;
-            case "JoinGame": break;
-            case "SquareClick": break;
+            case "CreateGame":  logic.CreateGame(((CreateGame)messageObject.getObject()), sessionId);break;
+            case "JoinGame": logic.JoinGame(((JoinGame)messageObject.getObject()), sessionId); break;
+            case "SquareClick": logic.SquareClick(((SquareClick)messageObject.getObject()), sessionId);break;
         }
     }
 }

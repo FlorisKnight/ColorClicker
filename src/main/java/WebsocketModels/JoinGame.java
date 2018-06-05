@@ -1,14 +1,19 @@
 package WebsocketModels;
 
 public class JoinGame {
-    private String gameCode;
+    private int gameID;
+    private int userId;
 
-    public JoinGame(String gameCode) {
-        this.gameCode = gameCode;
+    public JoinGame(int gameID, int userId) {
+        this.gameID = gameID;
+        this.userId = userId;
     }
 
-    public String getGameCode() {
-        return gameCode;
+    public int getGameID() {
+        return gameID;
     }
 
+    public int getUserId() {
+        return userId;
+    }
 }

@@ -1,5 +1,6 @@
 package ColorClickerRESTServer;
 
+import Models.Player;
 import WebsocketModels.SaveScore;
 
 import java.sql.*;
@@ -31,13 +32,13 @@ public class ColorClickerRESTServerDB {
 				r++;
 			}
 		}catch(SQLException e){
-			System.out.println("e");
+			System.out.println(e);
 		}
 		finally {
 			try {
 				conn.close();
 			}catch(SQLException e){
-				System.out.println("e");
+				System.out.println(e);
 			}
 		}
 
@@ -52,14 +53,14 @@ public class ColorClickerRESTServerDB {
 			String query = "Insert into highscores (username, score, gameType) values ('"+playerName+"', "+score+", '"+gametype+"');";
 			ResultSet rs = stmt.executeQuery(query);
 		}catch(SQLException e){
-			System.out.println("e");
+			System.out.println(e);
 			return false;
 		}
 		finally {
 			try {
 				conn.close();
 			}catch(SQLException e){
-				System.out.println("e");
+				System.out.println(e);
 			}
 		}
 		return true;
@@ -73,17 +74,41 @@ public class ColorClickerRESTServerDB {
 			String query = "Insert into users (userId, username) values ("+playerId+", '"+playerName+"');";
 			ResultSet rs = stmt.executeQuery(query);
 		}catch(SQLException e){
-			System.out.println("e");
+			System.out.println(e);
 			return false;
 		}
 		finally {
 			try {
 				conn.close();
 			}catch(SQLException e){
-				System.out.println("e");
+				System.out.println(e);
 			}
 		}
 		return true;
+	}
+
+	public String getPlayer(int playerID) {
+		conn = Connection();
+		String[][] highscores = new String[3][];
+		try {
+			Statement stmt = conn.createStatement();
+			String query = "SELECT  username FROM users WHERE userId = "+playerID+";";
+			ResultSet rs = stmt.executeQuery(query);
+			while(rs.next()){
+				return rs.getString("username");
+			}
+		}catch(SQLException e){
+			System.out.println(e);
+		}
+		finally {
+			try {
+				conn.close();
+			}catch(SQLException e){
+				System.out.println(e);
+			}
+		}
+
+		return null;
 	}
 
 }

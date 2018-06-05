@@ -13,7 +13,7 @@ public class ColorClickerGUI extends Application implements IColorClickerClientG
         controller = new sceneController(this);
 
         primaryStage.setTitle("Color Clicker");
-        controller.game();
+        controller.signInScene();
         primaryStage.show();
     }
 
