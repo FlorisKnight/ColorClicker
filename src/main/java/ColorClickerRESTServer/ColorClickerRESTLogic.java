@@ -1,26 +1,37 @@
 package ColorClickerRESTServer;
 
+import ColorClickerRESTServer.OAuth.Facebook;
 import Models.Player;
 import WebsocketModels.*;
 import com.google.gson.Gson;
 
 public class ColorClickerRESTLogic{
-    private ColorClickerRESTServerDB databaseConn;
+    ColorClickerRESTServerDB databaseConn;
+    Facebook oAuth;
 
     public ColorClickerRESTLogic(){
         databaseConn = new ColorClickerRESTServerDB();
+        oAuth = new Facebook();
     }
 
     public String SignIn(SignIn object){
         int playerId = 0;
-        //TODO authentication and stuff and check for account
+        try {
+            playerId = oAuth.authUser();
+        } catch (Exception e){
+            System.out.println(e);
+        }
         return String.valueOf(playerId);
     }
 
     public String SignUp(SignUp object){
         int playerId = 0;
-        //TODO authentication and stuff and check for account
-        databaseConn.registerPlayer(playerId,object.getName());
+        try {
+            playerId = oAuth.authUser();
+            databaseConn.registerPlayer(playerId,object.getName());
+        } catch (Exception e){
+            System.out.println(e);
+        }
         return String.valueOf(playerId);
     }
 

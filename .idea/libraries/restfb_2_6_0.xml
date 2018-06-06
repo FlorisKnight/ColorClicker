@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="restfb-2.6.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../Big idea/restfb-2.6.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/byte-buddy-1.8.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/commons-codec-1.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/commons-exec-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/commons-logging-1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/gson-2.8.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/guava-23.6-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/httpclient-4.5.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/httpcore-4.4.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/okhttp-3.9.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/libs/okio-1.13.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/client-combined-3.12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../Big idea/selenium/client-combined-3.12.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
