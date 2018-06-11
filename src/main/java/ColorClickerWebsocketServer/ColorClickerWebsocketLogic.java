@@ -27,7 +27,7 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
     }
 
     public void CreateGame(CreateGame object, String sessionID){
-        Game game = new Game(gameId++, CreatePlayer(object.getUserId(), sessionID, new javafx.scene.paint.Color(1,0,0,0)), this);
+        Game game = new Game(gameId++, CreatePlayer(object.getUserId(), sessionID, new javafx.scene.paint.Color(1,0,0,0)), this, object.getGametype());
         messageCreator.MessageCreator("CreateGameReceive", new CreateGameReceive(game.getGameId(), game.getPlayer1Name()), sessionID);
     }
 

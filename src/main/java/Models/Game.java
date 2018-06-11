@@ -1,11 +1,13 @@
 package Models;
 
+import ColorClickerWebsocketServer.ColorClickerWebsocketRandomSquare;
 import ColorClickerWebsocketServer.IColorClickerWebsocketLogic;
 
+import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Game {
+public class Game{
     int gameId;
     Player player1;
     Player player2;
@@ -13,14 +15,19 @@ public class Game {
     int player2FieldAmount;
     Object[][] field;
     Timer timer;
+    Thread randomSquare;
+    Random r;
 
     IColorClickerWebsocketLogic logic;
 
-    public Game(int gameId, Player player1, IColorClickerWebsocketLogic logic){
+    public Game(int gameId, Player player1, IColorClickerWebsocketLogic logic, String gametype){
         this.gameId = gameId;
         this.player1 = player1;
         field = new Object[8][8];
         this.logic = logic;
+        r = new Random();
+        if (gametype != "classic")
+            randomSquare = new Thread(new ColorClickerWebsocketRandomSquare(this, gametype));
     }
 
     public void AddPlayer(Player player2){
@@ -30,10 +37,14 @@ public class Game {
     public void StartGame(){
         //Start timer
         timer = new Timer();
+        if (randomSquare != null)
+            randomSquare.start();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 EndGame();
+                if (randomSquare != null)
+                    randomSquare.interrupt();
             }
         }, 1*60*1000);
     }
@@ -80,9 +91,11 @@ public class Game {
         }
     }
 
-    private void UpdateSquares(Player player, int xpos, int ypos){
-        addScore(player, xpos, ypos);
-        field[xpos][ypos] = player;
+    private void UpdateSquares(Object object, int xpos, int ypos){
+        if (object instanceof Player){
+            addScore(player, xpos, ypos);
+        }
+        field[xpos][ypos] = object;
         logic.UpdateSquares(player.getColor(), xpos, ypos, player.getSessionID());
     }
 
@@ -107,6 +120,15 @@ public class Game {
 
     public String getPlayer1SessionID(){
         return  player1.getSessionID();
+    }
+
+    public void placeRandomSquare(){
+            int color = r.nextInt(3);
+            switch (color){
+                case 0:;
+                case 1:;
+                case 2:;
+            }
     }
 
     public void EndGame(){

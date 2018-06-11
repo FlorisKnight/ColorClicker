@@ -3,8 +3,6 @@ package ColorClickerRESTServer.OAuth;
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
 import com.restfb.types.User;
-import javafx.application.Application;
-import javafx.stage.Stage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
