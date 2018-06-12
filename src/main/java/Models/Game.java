@@ -2,6 +2,7 @@ package Models;
 
 import ColorClickerWebsocketServer.ColorClickerWebsocketRandomSquare;
 import ColorClickerWebsocketServer.IColorClickerWebsocketLogic;
+import Models.Enums.Colors;
 
 import java.util.Random;
 import java.util.Timer;
@@ -93,10 +94,15 @@ public class Game{
 
     private void UpdateSquares(Object object, int xpos, int ypos){
         if (object instanceof Player){
+            Player player = (Player)object;
             addScore(player, xpos, ypos);
+            logic.UpdateSquares(player.getColor(), xpos, ypos, player.getSessionID());
+        } else if (object instanceof Color){
+            Color color = (Color)object;
+            logic.UpdateSquares(color.getColor(), xpos, ypos, player1.getSessionID());
+            logic.UpdateSquares(color.getColor(), xpos, ypos, player2.getSessionID());
         }
         field[xpos][ypos] = object;
-        logic.UpdateSquares(player.getColor(), xpos, ypos, player.getSessionID());
     }
 
     public boolean checkSessionID(String sessionID){
@@ -123,9 +129,13 @@ public class Game{
     }
 
     public void placeRandomSquare(){
-            int color = r.nextInt(3);
+        Color WHITE = new Color(1, new javafx.scene.paint.Color(1,1,1,0));
+        Color GRAY = new Color(2, new javafx.scene.paint.Color(0.5,0.5,0.5,0));
+        Color BLACK = new Color(3, new javafx.scene.paint.Color(0,0,0,0));
+
+        int color = r.nextInt(3);
             switch (color){
-                case 0:;
+                case 0:UpdateSquares(WHITE);
                 case 1:;
                 case 2:;
             }

@@ -2,10 +2,10 @@ package Models;
 
 public class Color {
 
-	private char color;
-	private int point;
+	javafx.scene.paint.Color color;
+	int point;
 
-	public Color(int point, char color) {
+	public Color(int point, javafx.scene.paint.Color color) {
 		this.point = point;
 		this.color = color;
 	}
@@ -14,7 +14,7 @@ public class Color {
 		return point;
 	}
 
-	public char getColor() {
+	public javafx.scene.paint.Color getColor() {
 		return color;
 	}
 }
