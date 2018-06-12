@@ -14,14 +14,6 @@ import sun.management.jdp.JdpPacketWriter;
 public class sceneSignIn {
     IColorClickerClientGUI GUI;
 
-    //Labels
-    Label lblEmail;
-    Label lblPassword;
-
-    //Textfields
-    TextField txtEmail;
-    PasswordField txtPassword;
-
     //Buttons
     Button btnSignIn;
     Button btnSignUp;
@@ -83,15 +75,7 @@ public class sceneSignIn {
 
         hbox.getChildren().addAll(btnSignIn,btnSignUp);
 
-        // Labels
-        lblEmail = new Label("Email address:");
-        lblPassword = new Label("Password:");
-
-        //Textfields
-        txtEmail = new TextField();
-        txtPassword = new PasswordField();
-
-        vbox.getChildren().addAll(lblEmail,txtEmail,lblPassword,txtPassword,hbox);
+        vbox.getChildren().addAll(hbox);
 
         return scene;
     }
@@ -101,7 +85,7 @@ public class sceneSignIn {
     }
 
     public void signIn(){
-        logic.SignIn(txtEmail.getText(),txtPassword.getText());
+        logic.SignIn();
     }
 
     public void signUp(){

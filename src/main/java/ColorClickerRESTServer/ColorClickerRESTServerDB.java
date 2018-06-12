@@ -47,13 +47,12 @@ public class ColorClickerRESTServerDB {
     public boolean setHighscores(String playerName, int score, String gametype) {
         conn = Connection();
         try {
-            //TODO Use parameters to make it more safe
             String query = "Insert into highscores (username, score, gameType) values (?,?,?)";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, playerName);
             stmt.setInt(2, score);
             stmt.setString(3, gametype);
-            ResultSet rs = stmt.executeQuery(query);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
             return false;
@@ -67,15 +66,14 @@ public class ColorClickerRESTServerDB {
         return true;
     }
 
-    public boolean registerPlayer(int playerId, String playerName) {
+    public boolean registerPlayer(String playerId, String playerName) {
         conn = Connection();
         try {
-            //TODO Use parameters to make it more safe
             String query = "INSERT into users (userId, username) values (? ,?)";
             PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setInt(1, playerId);
+            stmt.setString(1, playerId);
             stmt.setString(2, playerName);
-            ResultSet rs = stmt.executeQuery(query);
+            stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e);
             return false;
@@ -89,14 +87,13 @@ public class ColorClickerRESTServerDB {
         return true;
     }
 
-    public String getPlayer(int playerId) {
+    public String getPlayer(String playerId) {
         conn = Connection();
-        String[][] highscores = new String[3][];
         try {
             String query = "SELECT username FROM users WHERE userId = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, playerId);
             ResultSet rs = stmt.executeQuery(query);
-            stmt.setInt(1, playerId);
             while (rs.next()) {
                 return rs.getString("username");
             }
@@ -111,6 +108,50 @@ public class ColorClickerRESTServerDB {
         }
 
         return null;
+    }
+
+    public int checkIdAvailability(String playerId) {
+        conn = Connection();
+        try {
+            String query = "SELECT count() FROM users WHERE userId = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, playerId);
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                return rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return 0;
+    }
+
+    public int checkNameAvailability(String name) {
+        conn = Connection();
+        try {
+            String query = "SELECT count() FROM users WHERE name = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setString(1, name);
+            ResultSet rs = stmt.executeQuery(query);
+            while (rs.next()) {
+                return rs.getInt("total");
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        } finally {
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
+        }
+        return 0;
     }
 
 }

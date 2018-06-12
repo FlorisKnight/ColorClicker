@@ -4,12 +4,12 @@ import javafx.scene.paint.Color;
 
 public class Player {
 	private String sessionID;
-	private int id;
+	private String id;
 	private String name;
 	private javafx.scene.paint.Color color;
 	private int score;
 
-	public Player(String sessionID, int id, String name, javafx.scene.paint.Color color) {
+	public Player(String sessionID, String id, String name, javafx.scene.paint.Color color) {
 		this.sessionID = sessionID;
 		this.id = id;
 		this.name = name;
@@ -17,7 +17,7 @@ public class Player {
 		score = 0;
 	}
 
-	public Player(int id, String name){
+	public Player(String id, String name){
 		this.id = id;
 		this.name = name;
 	}
@@ -26,7 +26,7 @@ public class Player {
 		return sessionID;
 	}
 
-	public int getId() {
+	public String getId() {
 		return id;
 	}
 

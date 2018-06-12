@@ -6,13 +6,16 @@ import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.ContentType;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
 import java.io.IOException;
 
-public class ColorClickerClientRESTLogic {
+public class ColorClickerClientRESTLogic{
     class Response {
 
         private String operation = "n/a";
@@ -44,64 +47,42 @@ public class ColorClickerClientRESTLogic {
         }
     }
 
-    public int SignIn(String message) {
-        int result = 0;
-
-        final String query = "http://localhost:8091/ColorClicker/" + message;
-
-        System.out.println("[Query] : " + query);
+    public String baseMethodPost(Object data, String query) {
 
         // Perform the query
-        HttpGet httpGet = new HttpGet(query);
+        HttpPost httpPost = new HttpPost(query);
+        Gson gson = new Gson();
+        String json = gson.toJson(data);
+        StringEntity stringEntity = new StringEntity(json, ContentType.APPLICATION_JSON);
+        httpPost.setEntity(stringEntity);
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
-             CloseableHttpResponse response = httpClient.execute(httpGet);) {
-            System.out.println("[Status Line] : " + response.getStatusLine());
+             CloseableHttpResponse response = httpClient.execute(httpPost);) {
             HttpEntity entity = response.getEntity();
             final String entityString = EntityUtils.toString(entity);
-            System.out.println("[Entity] : " + entityString);
-            Gson gson = new Gson();
-            Response jsonResponse = gson.fromJson(entityString,Response.class);
-            String stringResult = jsonResponse.getResult();
-            System.out.println("[Result] : " + stringResult );
-            result = Integer.parseInt(stringResult);
+            return entityString;
         } catch (IOException e) {
-            // Evil, pure evil this solution: ....
             System.out.println("IOException : " + e.toString());
         }
 
-        return result;
+        return null;
     }
 
-    public String[][] getHighscores(){
-        String[][] result = null;
-
-        final String query = "http://localhost:8091/ColorClicker/getHighscores";
-
-        System.out.println("[Query] : " + query);
+    public String baseMethodGet(String query) {
 
         // Perform the query
         HttpGet httpGet = new HttpGet(query);
 
+
         try (CloseableHttpClient httpClient = HttpClients.createDefault();
              CloseableHttpResponse response = httpClient.execute(httpGet);) {
-            System.out.println("[Status Line] : " + response.getStatusLine());
             HttpEntity entity = response.getEntity();
             final String entityString = EntityUtils.toString(entity);
-            System.out.println("[Entity] : " + entityString);
-            Gson gson = new Gson();
-            Response jsonResponse = gson.fromJson(entityString,Response.class);
-            String stringResult = jsonResponse.getResult();
-            System.out.println("[Result] : " + stringResult );
-            gson = new Gson();
-            jsonMessage messageObject = gson.fromJson(stringResult, jsonMessage.class);
-            getHighscores object = (getHighscores)messageObject.getObject();
-            result = object.getHighscores();
+            return entityString;
         } catch (IOException e) {
-            // Evil, pure evil this solution: ....
             System.out.println("IOException : " + e.toString());
         }
 
-        return result;
+        return null;
     }
 }

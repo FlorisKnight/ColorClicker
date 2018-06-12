@@ -8,6 +8,6 @@ public interface IColorClickerWebsocketRESTLogic {
 	 * 
 	 * @param playerID
 	 */
-	public String getPlayerName(int playerID);
+	public String getPlayerName(String playerID);
 
 }

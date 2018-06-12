@@ -48,7 +48,7 @@ public class ColorClickerWebsocketRESTLogic implements IColorClickerWebsocketRES
         this.messageReader = messageReader;
     }
 
-    public String getPlayerName(int playerID){
+    public String getPlayerName(String playerID){
         String result = null;
 
         final String query = "http://localhost:8091/ColorClicker/" + playerID;

@@ -16,11 +16,11 @@ public class ColorClickerWebsocketRandomSquare implements Runnable {
         this.game = game;
         this.gametype = gametype;
         switch(gametype){
-            case "normal":
+            case "Normal":
                 MIN_TICKS = 4;
                 MAX_TICKS = 15;
                 break;
-            case "fast":
+            case "Fast":
                 MIN_TICKS = 1;
                 MAX_TICKS = 8;
                 break;

@@ -1,24 +1,17 @@
 package WebsocketModels;
 
 public class SignUp {
-    private String email;
-    private String password;
+    private String facebookId;
     private String name;
 
-    public SignUp(String email, String password, String name) {
-        this.email = email;
-        this.password = password;
+    public SignUp(String facebookId, String name) {
+        this.facebookId = facebookId;
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getFacebookId(){
+        return facebookId;
     }
-
-    public String getPassword() {
-        return password;
-    }
-
     public String getName() {
         return name;
     }

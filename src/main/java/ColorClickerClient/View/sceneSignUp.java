@@ -38,6 +38,7 @@ public class sceneSignUp {
     public sceneSignUp(sceneController controller, IColorClickerClientSignInSignUpLogic logic){
         this.controller = controller;
         scene = makeScene();
+        this.logic = logic;
     }
 
     public Scene makeScene(){
@@ -103,6 +104,6 @@ public class sceneSignUp {
     }
 
     public void SignUp(){
-        logic.SignUp(txtUsername.getText(), txtEmail.getText(), txtPassword.getText());
+        logic.SignUp(txtUsername.getText());
     }
 }

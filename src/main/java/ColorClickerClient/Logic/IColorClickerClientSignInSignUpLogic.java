@@ -1,7 +1,7 @@
 package ColorClickerClient.Logic;
 
 public interface IColorClickerClientSignInSignUpLogic {
-    public void SignIn(String email, String password);
+    public void SignIn();
 
-    public void SignUp(String email, String password, String name);
+    public void SignUp(String name);
 }

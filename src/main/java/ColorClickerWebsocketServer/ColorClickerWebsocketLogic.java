@@ -17,13 +17,17 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
     ColorClickerEventServerSocket eventSockets;
     ArrayList<Game> games;
 
-    public ColorClickerWebsocketLogic(ColorClickerEventServerSocket eventSockets){
+    public ColorClickerWebsocketLogic(){
         REST = new ColorClickerWebsocketRESTLogic(new ColorClickerWebsocketMessageReader(this));
         eventSockets = new ColorClickerEventServerSocket(this, new ColorClickerWebsocketMessageReader(this));
         this.eventSockets = eventSockets;
         messageCreator = new ColorClickerWebsocketMessageCreator(eventSockets);
         gameId = 0;
         games = new ArrayList<>();
+    }
+
+    public ColorClickerEventServerSocket getEventSockets(){
+        return getEventSockets();
     }
 
     public void CreateGame(CreateGame object, String sessionID){
@@ -65,7 +69,7 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
         return null;
     }
 
-    private Player CreatePlayer(int playerID, String sessionID, javafx.scene.paint.Color color){
+    private Player CreatePlayer(String playerID, String sessionID, javafx.scene.paint.Color color){
         String name = REST.getPlayerName(playerID);
         return new Player(sessionID, playerID, name, color);
     }

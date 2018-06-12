@@ -13,7 +13,7 @@ import javafx.scene.layout.VBox;
 public class sceneCreateGame {
     //Labels
     Label lblGameType;
-    //Rabio Buttons
+    //Radio Buttons
     final ToggleGroup tgGametype = new ToggleGroup();
 
     RadioButton rbClassic;
@@ -100,8 +100,8 @@ public class sceneCreateGame {
         return scene;
     }
 
-    public void CreateGame(String gameCode){
-        logic.CreateGameSend(gameCode);
+    public void CreateGame(String gameType){
+        logic.CreateGameSend(gameType);
     }
 
     public void Back(){

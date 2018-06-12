@@ -1,46 +1,59 @@
 package ColorClickerClient.Logic;
 
+import ColorClickerClient.Logic.REST.ColorClickerClientRESTHandler;
 import ColorClickerClient.Logic.REST.ColorClickerClientRESTLogic;
 import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageCreator;
 import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageReader;
 import ColorClickerClient.Logic.Websockets.ColorClickerEventClientSocket;
 import ColorClickerClient.View.sceneController;
 import ColorClickerClient.View.sceneGame;
-import Models.Color;
 import WebsocketModels.*;
 import javafx.scene.Scene;
-import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+import ColorClickerClient.Logic.OAuth.*;
 
 public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGameLogic,IColorClickerClientGameLogic,IColorClickerClientHighscoreLogic,IColorClickerClientSignInSignUpLogic {
     private ColorClickerClientMessageCreator messageCreator;
     private sceneGame game;
-    private int userId;
+    private String userId;
     private sceneController controller;
-    private ColorClickerClientRESTLogic REST;
+    private ColorClickerClientRESTHandler restHandler;
     private ColorClickerEventClientSocket clientSocket;
     private ColorClickerClientMessageReader handler;
+    private FacebookOAuth oAuth;
 
     public ColorClickerClientLogic(sceneController controller, Scene scene){
-        messageCreator = new ColorClickerClientMessageCreator();
         this.controller = controller;
-        REST = new ColorClickerClientRESTLogic();
+        restHandler = new ColorClickerClientRESTHandler();
         handler = new ColorClickerClientMessageReader(this);
         clientSocket = new ColorClickerEventClientSocket(handler);
+        messageCreator = new ColorClickerClientMessageCreator(clientSocket);
+        oAuth = new FacebookOAuth();
     }
 
     //SignIn and SignUp logic
 
-    public void SignIn(String email, String password){
-        userId = REST.SignIn(messageCreator.MessageCreator("SignIn", new SignIn(email,password)));
-        if (userId != 0){
+    public void SignIn(){
+        String facebookId = null;
+        try{
+            facebookId = oAuth.authUser();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        if (facebookId != null || restHandler.SignIn(facebookId)){
+            userId = facebookId;
             controller.homeScene();
         }
     }
 
-    public void SignUp(String email, String password, String name){
-        userId = REST.SignIn(messageCreator.MessageCreator("SignUp", new SignUp(email,password, name)));
-
-        if (userId != 0){
+    public void SignUp(String name){
+        String facebookId = null;
+        try{
+            facebookId = oAuth.authUser();
+        }catch (Exception e){
+            System.out.println(e);
+        }
+        if (facebookId != null || restHandler.SignUp(facebookId, name)){
+            userId = facebookId;
             controller.homeScene();
         }
     }
@@ -82,7 +95,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
 //TODO use algorithm to sort highscores
 
     public void GetHighscores(){
-        controller.highscores(REST.getHighscores());
+        controller.highscores(restHandler.getHighscores());
     }
 
     //Game Logic

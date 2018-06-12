@@ -27,7 +27,7 @@ public class Game{
         field = new Object[8][8];
         this.logic = logic;
         r = new Random();
-        if (gametype != "classic")
+        if (gametype != "Classic")
             randomSquare = new Thread(new ColorClickerWebsocketRandomSquare(this, gametype));
     }
 
@@ -51,8 +51,8 @@ public class Game{
     }
 
     public String getWinner(){
-        for (int i = 0; i < 7; i++){
-            for (int j = 0; j < 7; j++){
+        for (int i = 0; i <= 7; i++){
+            for (int j = 0; j <= 7; j++){
                 if (field[i][j] instanceof Player) {
                     if (field[i][j].equals(player1)){
                         player1FieldAmount++;
@@ -133,11 +133,14 @@ public class Game{
         Color GRAY = new Color(2, new javafx.scene.paint.Color(0.5,0.5,0.5,0));
         Color BLACK = new Color(3, new javafx.scene.paint.Color(0,0,0,0));
 
+        int xPos = r.nextInt(8);
+        int yPos = r.nextInt(8);
         int color = r.nextInt(3);
+
             switch (color){
-                case 0:UpdateSquares(WHITE);
-                case 1:;
-                case 2:;
+                case 0:UpdateSquares(WHITE, xPos, yPos);
+                case 1:UpdateSquares(GRAY, xPos, yPos);
+                case 2:UpdateSquares(BLACK, xPos, yPos);
             }
     }
 

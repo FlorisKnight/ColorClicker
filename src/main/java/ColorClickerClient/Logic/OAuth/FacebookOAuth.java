@@ -1,4 +1,4 @@
-package ColorClickerRESTServer.OAuth;
+package ColorClickerClient.Logic.OAuth;
 
 import com.restfb.DefaultFacebookClient;
 import com.restfb.FacebookClient;
@@ -6,8 +6,8 @@ import com.restfb.types.User;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Facebook{
-    public int authUser(){
+public class FacebookOAuth {
+    public String authUser(){
         String appId = "220796958728795";
         String domain = "http://localhost/";
 
@@ -29,7 +29,7 @@ public class Facebook{
                 FacebookClient fbClient = new DefaultFacebookClient(accessToken);
                 User user = fbClient.fetchObject("me",User.class);
 
-                return Integer.valueOf(user.getId());
+                return user.getId();
 
             }
         }

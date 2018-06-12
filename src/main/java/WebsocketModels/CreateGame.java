@@ -2,9 +2,9 @@ package WebsocketModels;
 
 public class CreateGame {
     private String gametype;
-    private int userId;
+    private String userId;
 
-    public CreateGame(String gametype, int userId) {
+    public CreateGame(String gametype, String userId) {
         this.gametype = gametype;
         this.userId = userId;
     }
@@ -13,7 +13,7 @@ public class CreateGame {
         return gametype;
     }
 
-    public int getUserId() {
+    public String getUserId() {
         return userId;
     }
 }

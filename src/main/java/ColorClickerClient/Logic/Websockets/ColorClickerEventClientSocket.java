@@ -14,34 +14,27 @@ public class ColorClickerEventClientSocket{
 
 	public ColorClickerEventClientSocket(IColorClickerClientWebsocketMessageReader handler){
 		this.handler = handler;
+		setupSocket();
 	}
 
-	private boolean setupSocket() {
+	private void setupSocket() {
 		URI uri = URI.create("ws://localhost:8095/wstest/");
 		try {
 			javax.websocket.WebSocketContainer container = javax.websocket.ContainerProvider.getWebSocketContainer();
 			try {
 				// Attempt Connect
 				session = container.connectToServer(this, uri);
-				// Send a message
-				//session.getBasicRemote().sendText("Hello");
-				// Close session
-				//Thread.sleep(10000);
-				//session.close();
-				return true;
 			} finally {
 				// Force lifecycle stop when done with container.
 				// This is to free up threads and resources that the
 				// JSR-356 container allocates. But unfortunately
 				// the JSR-356 spec does not handle lifecycles (yet)
-				/**if (container instanceof org.eclipse.jetty.util.component.LifeCycle) {
+				if (container instanceof org.eclipse.jetty.util.component.LifeCycle) {
 				 ((org.eclipse.jetty.util.component.LifeCycle) container).stop();
 				 }
-				 */
 			}
 		} catch (Throwable t) {
 			t.printStackTrace(System.err);
-			return false;
 		}
 
 	}
@@ -64,7 +57,7 @@ public class ColorClickerEventClientSocket{
 		System.out.println("[ERROR]: " + cause.getMessage());
 	}
 
-	private void sendMessageToServer(String message)
+	public void sendMessageToServer(String message)
 	{
 		try {
 			session.getBasicRemote().sendText(message);

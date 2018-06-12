@@ -1,38 +1,32 @@
 package ColorClickerRESTServer;
 
-import ColorClickerRESTServer.OAuth.Facebook;
-import Models.Player;
 import WebsocketModels.*;
 import com.google.gson.Gson;
 
 public class ColorClickerRESTLogic{
     ColorClickerRESTServerDB databaseConn;
-    Facebook oAuth;
 
     public ColorClickerRESTLogic(){
         databaseConn = new ColorClickerRESTServerDB();
-        oAuth = new Facebook();
     }
 
-    public String SignIn(SignIn object){
-        int playerId = 0;
+    public String SignIn(String facebookId){
         try {
-            playerId = oAuth.authUser();
+            if (databaseConn.getPlayer(facebookId) != null)
+                return "true";
+            else
+                return "false";
         } catch (Exception e){
             System.out.println(e);
+            return "false";
         }
-        return String.valueOf(playerId);
     }
 
     public String SignUp(SignUp object){
-        int playerId = 0;
-        try {
-            playerId = oAuth.authUser();
-            databaseConn.registerPlayer(playerId,object.getName());
-        } catch (Exception e){
-            System.out.println(e);
-        }
-        return String.valueOf(playerId);
+        if (databaseConn.checkIdAvailability(object.getFacebookId()) == 0 && databaseConn.checkNameAvailability(object.getName()) == 0)
+            return String.valueOf(databaseConn.registerPlayer(object.getFacebookId(), object.getName()));
+        else
+            return "false";
     }
 
     public String getHighscores(){
@@ -45,7 +39,7 @@ public class ColorClickerRESTLogic{
         return "true";
     }
 
-    public String getPlayer(int playerID){
+    public String getPlayer(String playerID){
         return databaseConn.getPlayer(playerID);
     }
 
