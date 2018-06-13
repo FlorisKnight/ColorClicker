@@ -1,10 +1,10 @@
-package WebsocketModels;
+package ColorClickerClient.Logic.REST.dto;
 
-public class SignUp {
+public class SignUpRequestDto extends BaseRequestDto {
     private String facebookId;
     private String name;
 
-    public SignUp(String facebookId, String name) {
+    public SignUpRequestDto(String facebookId, String name) {
         this.facebookId = facebookId;
         this.name = name;
     }

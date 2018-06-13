@@ -1,50 +1,45 @@
 package ColorClickerRESTServer;
 
-import WebsocketModels.*;
-import com.google.gson.Gson;
+import Models.Score;
+
+import java.util.ArrayList;
 
 public class ColorClickerRESTLogic{
     ColorClickerRESTServerDB databaseConn;
 
-    public ColorClickerRESTLogic(){
-        databaseConn = new ColorClickerRESTServerDB();
+    public ColorClickerRESTLogic(ColorClickerRESTServerDB databaseConn){
+        this.databaseConn = databaseConn;
     }
 
-    public String SignIn(String facebookId){
+    public boolean SignIn(String facebookId){
         try {
             if (databaseConn.getPlayer(facebookId) != null)
-                return "true";
+                return true;
             else
-                return "false";
+                return false;
         } catch (Exception e){
             System.out.println(e);
-            return "false";
+            return false;
         }
     }
 
-    public String SignUp(SignUp object){
-        if (databaseConn.checkIdAvailability(object.getFacebookId()) == 0 && databaseConn.checkNameAvailability(object.getName()) == 0)
-            return String.valueOf(databaseConn.registerPlayer(object.getFacebookId(), object.getName()));
+    public boolean SignUp(String facebookId, String name){
+        if (databaseConn.checkIdAvailability(facebookId) == 0 && databaseConn.checkNameAvailability(name) == 0)
+            return databaseConn.registerPlayer(facebookId, name);
         else
-            return "false";
+            return false;
     }
 
-    public String getHighscores(){
-        String[][] highscores = databaseConn.getHighscores();
-        return packResponseToJson("getHighscores", new getHighscores(highscores));
+    public ArrayList<Score> getHighscores(){
+        return databaseConn.getHighscores();
     }
 
-    public String saveScores(SaveScore object){
-        databaseConn.setHighscores(object.getUsername(),object.getScore(),object.getGameType());
-        return "true";
+    public boolean saveScores(String username, int score, String gameType){
+        return databaseConn.setHighscores(username,score,gameType);
     }
 
     public String getPlayer(String playerID){
         return databaseConn.getPlayer(playerID);
     }
 
-    private String packResponseToJson(String action, Object object){
-        Gson gson = new Gson();
-        return gson.toJson(new jsonMessage(action, object));
-    }
 }

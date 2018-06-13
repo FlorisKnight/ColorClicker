@@ -1,13 +1,14 @@
 package ColorClickerClient.Logic.Websockets;
 
 import ColorClickerClient.Logic.ColorClickerClientLogic;
+import ColorClickerClient.Logic.IColorClickerClientGameLogic;
 import WebsocketModels.*;
 import com.google.gson.Gson;
 
 
 public class ColorClickerClientMessageReader implements IColorClickerClientWebsocketMessageReader{
-    ColorClickerClientLogic logic;
-    public ColorClickerClientMessageReader(ColorClickerClientLogic logic){
+    IColorClickerClientGameLogic logic;
+    public ColorClickerClientMessageReader(IColorClickerClientGameLogic logic){
         this.logic=logic;
 
     }

@@ -14,13 +14,9 @@ import javafx.scene.layout.VBox;
 public class sceneSignUp {
     //Labels
     Label lblUsername;
-    Label lblEmail;
-    Label lblPassword;
 
     //Textfields
     TextField txtUsername;
-    TextField txtEmail;
-    PasswordField txtPassword;
 
     //Buttons
     Button btnSignUp;
@@ -85,12 +81,8 @@ public class sceneSignUp {
         //VBox items
         lblUsername = new Label("Username:");
         txtUsername = new TextField();
-        lblEmail = new Label("E-mail:");
-        txtEmail = new TextField();
-        lblPassword = new Label("Password");
-        txtPassword = new PasswordField();
 
-        vbox.getChildren().addAll(lblUsername,txtUsername,lblEmail,txtEmail,lblPassword,txtPassword,hbox);
+        vbox.getChildren().addAll(lblUsername,txtUsername,hbox);
 
         return scene;
     }

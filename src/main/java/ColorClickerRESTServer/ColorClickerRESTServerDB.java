@@ -1,9 +1,11 @@
 package ColorClickerRESTServer;
 
 import Models.Player;
+import Models.Score;
 import WebsocketModels.SaveScore;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class ColorClickerRESTServerDB {
     private Connection conn;
@@ -17,19 +19,17 @@ public class ColorClickerRESTServerDB {
         return conn;
     }
 
-    public String[][] getHighscores() {
+    public ArrayList<Score> getHighscores() {
         conn = Connection();
-        String[][] highscores = new String[3][];
+        ArrayList<Score> highscores = new ArrayList<>();
         int r = 1;
         try {
             Statement stmt = conn.createStatement();
             String query = "SELECT  score,username,gameType FROM highscores;";
             ResultSet rs = stmt.executeQuery(query);
             while (rs.next()) {
-                highscores[1][r] = String.valueOf(rs.getInt("score"));
-                highscores[2][r] = rs.getString("username");
-                highscores[3][r] = rs.getString("gameType");
-                r++;
+
+                highscores.add(new Score(rs.getString("username"), rs.getInt("score"),rs.getString("gameType")));
             }
         } catch (SQLException e) {
             System.out.println(e);

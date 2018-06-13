@@ -1,45 +1,37 @@
 package ColorClickerClient.Logic.REST;
 
-import WebsocketModels.SignUp;
-import WebsocketModels.getHighscores;
-import com.google.gson.Gson;
+import ColorClickerClient.Logic.REST.dto.*;
+import Models.Score;
 
 import java.util.ArrayList;
 
-public class ColorClickerClientRESTHandler implements IColorClickerClientRESTHandler {
-    ColorClickerClientRESTLogic rest;
-
-    public ColorClickerClientRESTHandler(){
-        rest = new ColorClickerClientRESTLogic();
-    }
+public class ColorClickerClientRESTHandler extends ColorClickerClientRESTBaseLogic implements IColorClickerClientRESTHandler {
+    private final String url = "http://localhost:8091/ColorClicker/";
 
     @Override
     public boolean SignUp(String facebookId, String name) {
-        SignUp data = new SignUp(facebookId, name);
-        String result = rest.baseMethodPost(data, getQuery("SignUp"));
-
-        return false;
+        SignUpRequestDto dto = new SignUpRequestDto(facebookId, name);
+        BoolResultDto result = executeQueryPost(dto, getQuery("player/SignUp/"), BoolResultDto.class);
+        return result.getCheck();
     }
 
     @Override
     public boolean SignIn(String facebookId) {
-        String result = rest.baseMethodPost(facebookId, getQuery("SignUp"));
-        return false;
+        SignInRequestDto dto = new SignInRequestDto(facebookId);
+        BoolResultDto result = executeQueryPost(dto, getQuery("player/SignIn/"), BoolResultDto.class);
+        return result.getCheck();
     }
 
     @Override
-    public String[][] getHighscores() {
-        String result = rest.baseMethodGet(getQuery("SignUp"));
-        Gson gson = new Gson();
-        if (result != null){
-            getHighscores highscores = gson.fromJson(result, getHighscores.class);
-            return highscores.getHighscores();
+    public ArrayList<Score> getHighscores() {
+        HighscoresResultDto result = executeQueryGet(getQuery("/Highscores/get/"), HighscoresResultDto.class);
+        if (result.isSuccess()){
+            return result.getHighscores();
         } else
             return null;
     }
 
     private String getQuery(String path){
-        String basicQuery = "http://localhost:8091/ColorClicker/";
-        return basicQuery + path + "/";
+        return url + path;
     }
 }

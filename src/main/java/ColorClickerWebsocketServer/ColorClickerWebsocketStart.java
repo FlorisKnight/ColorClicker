@@ -17,7 +17,7 @@ public class ColorClickerWebsocketStart extends Application{
         messageReader = new ColorClickerWebsocketMessageReader(logic);
         socket = new ColorClickerEventServerSocket(logic, messageReader);
 
-        port = 8095;
+        port = 8096;
 
         eventServer.startWebSocketServer(socket, port);
     }

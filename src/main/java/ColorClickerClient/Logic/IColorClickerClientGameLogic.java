@@ -1,18 +1,25 @@
 package ColorClickerClient.Logic;
 
+import WebsocketModels.CreateGameReceive;
+import WebsocketModels.JoinGameReceive;
 import WebsocketModels.UpdatePlayerScore;
 import WebsocketModels.UpdateSquare;
 
 public interface IColorClickerClientGameLogic {
-    public void EndGame(String playerName);
 
-    public void SquareClick(int xPos, int yPos);
+    void CreateGameReceive(CreateGameReceive object);
 
-    public void UpdateSquares(UpdateSquare object);
+    void JoinGameReceived(JoinGameReceive object);
 
-    public void UpdatePlayerScore(UpdatePlayerScore object);
+    void EndGame(String playerName);
 
-    public void UpdatePlayerName(String playerName);
+    void SquareClick(int xPos, int yPos);
 
-    public void UpdateTime(int time);
+    void UpdateSquares(UpdateSquare object);
+
+    void UpdatePlayerScore(UpdatePlayerScore object);
+
+    void UpdatePlayerName(String playerName);
+
+    void UpdateTime(int time);
 }

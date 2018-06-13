@@ -1,24 +1,21 @@
 package ColorClickerWebsocketServer;
 
-import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageCreator;
-import ColorClickerWebsocketServer.REST.ColorClickerWebsocketRESTLogic;
-import Models.Color;
+import ColorClickerWebsocketServer.REST.ColorClickerWebsocketRESTHandler;
 import Models.Game;
 import Models.Player;
 import WebsocketModels.*;
-import sun.misc.ClassFileTransformer;
 
 import java.util.ArrayList;
 
 public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
     int gameId;
-    ColorClickerWebsocketRESTLogic REST;
+    ColorClickerWebsocketRESTHandler REST;
     ColorClickerWebsocketMessageCreator messageCreator;
     ColorClickerEventServerSocket eventSockets;
     ArrayList<Game> games;
 
     public ColorClickerWebsocketLogic(){
-        REST = new ColorClickerWebsocketRESTLogic(new ColorClickerWebsocketMessageReader(this));
+        REST = new ColorClickerWebsocketRESTHandler();
         eventSockets = new ColorClickerEventServerSocket(this, new ColorClickerWebsocketMessageReader(this));
         this.eventSockets = eventSockets;
         messageCreator = new ColorClickerWebsocketMessageCreator(eventSockets);

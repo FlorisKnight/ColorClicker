@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.net.URI;
 
 
-public class ColorClickerEventClientSocket{
+public class ColorClickerEventClientSocket implements IColorClickerEventClientSocket{
 	IColorClickerClientWebsocketMessageReader handler;
 	private javax.websocket.Session session;
 	sceneGame game;
@@ -18,7 +18,7 @@ public class ColorClickerEventClientSocket{
 	}
 
 	private void setupSocket() {
-		URI uri = URI.create("ws://localhost:8095/wstest/");
+		URI uri = URI.create("ws://localhost:8096/wstest/");
 		try {
 			javax.websocket.WebSocketContainer container = javax.websocket.ContainerProvider.getWebSocketContainer();
 			try {

@@ -1,5 +1,6 @@
 package ColorClickerClient.View;
 
+import Models.Score;
 import com.sun.deploy.xml.XMLable;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -13,9 +14,11 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+import java.util.ArrayList;
+
 public class sceneHighscores {
     //Properties
-    String[][] highscores;
+    ArrayList<Score> highscores;
     Label lblPoints;
     Label lblName;
     Label lblGameType;
@@ -31,7 +34,7 @@ public class sceneHighscores {
 
     //Controller
     sceneController controller;
-    public sceneHighscores(sceneController controller, String[][] highscores){
+    public sceneHighscores(sceneController controller, ArrayList<Score> highscores){
         this.controller = controller;
         this.highscores = highscores;
         scene = makeScene();
@@ -65,22 +68,19 @@ public class sceneHighscores {
 
         // Leaderboard
         lblPoints = new Label("Score");
-        gridLeaderboard.add(lblPoints, 1,1);
+        gridLeaderboard.add(lblPoints, 1,0);
 
         lblName = new Label("Name");
-        gridLeaderboard.add(lblName, 2,1);
+        gridLeaderboard.add(lblName, 2,0);
 
         lblGameType = new Label("Gametype");
-        gridLeaderboard.add(lblGameType, 2,1);
+        gridLeaderboard.add(lblGameType, 2,0);
 
-        for (int i = 0; i < highscores.length; ++i) {
-            for (int j = 0; j < highscores[i].length; ++j) {
-                switch (j){
-                case(0): gridLeaderboard.add(new Label(highscores[i][j]), 1,i+2); break;
-                case(1): gridLeaderboard.add(new Label(highscores[i][j]), 2,i+2); break;
-                case(2): gridLeaderboard.add(new Label(highscores[i][j]), 3,i+2); break;
-                }
-            }
+        int i = 1;
+        for (Score s: highscores) {
+            gridLeaderboard.add(new Label(String.valueOf(s.getScore())), 1,i);
+            gridLeaderboard.add(new Label(s.getName()), 2,i);
+            gridLeaderboard.add(new Label(s.getGameType()), 3,i);
         }
 
         // Button to go back to sceneHomeScreen

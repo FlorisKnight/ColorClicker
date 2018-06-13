@@ -1,7 +1,10 @@
 package ColorClickerClient.View;
 
 import ColorClickerClient.Logic.ColorClickerClientLogic;
+import Models.Score;
 import javafx.scene.Scene;
+
+import java.util.ArrayList;
 
 public class sceneController {
     IColorClickerClientGUI application;
@@ -44,7 +47,7 @@ public class sceneController {
         application.Draw(joinGame.getScene());
     }
 
-    public void highscores(String[][] highscoresList){
+    public void highscores(ArrayList<Score> highscoresList){
         highscores = new sceneHighscores(this,highscoresList);
     }
 

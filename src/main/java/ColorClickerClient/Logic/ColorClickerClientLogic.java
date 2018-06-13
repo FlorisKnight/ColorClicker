@@ -1,7 +1,6 @@
 package ColorClickerClient.Logic;
 
 import ColorClickerClient.Logic.REST.ColorClickerClientRESTHandler;
-import ColorClickerClient.Logic.REST.ColorClickerClientRESTLogic;
 import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageCreator;
 import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageReader;
 import ColorClickerClient.Logic.Websockets.ColorClickerEventClientSocket;
@@ -39,7 +38,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
         }catch (Exception e){
             System.out.println(e);
         }
-        if (facebookId != null || restHandler.SignIn(facebookId)){
+        if (facebookId != null && restHandler.SignIn(facebookId)){
             userId = facebookId;
             controller.homeScene();
         }
@@ -52,7 +51,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
         }catch (Exception e){
             System.out.println(e);
         }
-        if (facebookId != null || restHandler.SignUp(facebookId, name)){
+        if (facebookId != null && name != null && restHandler.SignUp(facebookId, name)){
             userId = facebookId;
             controller.homeScene();
         }
