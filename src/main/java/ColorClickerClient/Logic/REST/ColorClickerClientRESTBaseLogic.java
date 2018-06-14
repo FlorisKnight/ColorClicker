@@ -27,6 +27,7 @@ public abstract class ColorClickerClientRESTBaseLogic {
             final String entityString = EntityUtils.toString(entity);
             return gson.fromJson(entityString, clazz);
         } catch (IOException | JsonSyntaxException e) {
+            System.out.println(e);
             return null;
         }
     }

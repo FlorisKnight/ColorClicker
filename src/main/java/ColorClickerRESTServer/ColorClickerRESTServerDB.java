@@ -12,7 +12,7 @@ public class ColorClickerRESTServerDB {
 
     private Connection Connection() {
         try {
-            conn = DriverManager.getConnection("mssql.fhict.local", "dbi359176", "Subzamboo2");
+            conn = DriverManager.getConnection("jdbc:sqlserver://mssql.fhict.local;database=dbi359176;user=dbi359176;password=Subzamboo2");
         } catch (SQLException e) {
             System.out.println(e);
         }
@@ -26,10 +26,10 @@ public class ColorClickerRESTServerDB {
         try {
             Statement stmt = conn.createStatement();
             String query = "SELECT  score,username,gameType FROM highscores;";
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-
-                highscores.add(new Score(rs.getString("username"), rs.getInt("score"),rs.getString("gameType")));
+            try(ResultSet rs = stmt.executeQuery(query)) {
+                while (rs.next()) {
+                    highscores.add(new Score(rs.getString("username"), rs.getInt("score"), rs.getString("gameType")));
+                }
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -93,9 +93,10 @@ public class ColorClickerRESTServerDB {
             String query = "SELECT username FROM users WHERE userId = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, playerId);
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                return rs.getString("username");
+            try(ResultSet rs = stmt.executeQuery()) {
+                while (rs.next()) {
+                    return rs.getString("username");
+                }
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -113,12 +114,13 @@ public class ColorClickerRESTServerDB {
     public int checkIdAvailability(String playerId) {
         conn = Connection();
         try {
-            String query = "SELECT count() FROM users WHERE userId = ?";
+            String query = "SELECT count(*) FROM users WHERE userId = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, playerId);
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                return rs.getInt("total");
+            try (ResultSet rs = stmt.executeQuery()){
+                while (rs.next()) {
+                    return rs.getInt(1);
+                }
             }
         } catch (SQLException e) {
             System.out.println(e);
@@ -135,12 +137,13 @@ public class ColorClickerRESTServerDB {
     public int checkNameAvailability(String name) {
         conn = Connection();
         try {
-            String query = "SELECT count() FROM users WHERE name = ?";
+            String query = "SELECT count(*) FROM users WHERE username = ?";
             PreparedStatement stmt = conn.prepareStatement(query);
             stmt.setString(1, name);
-            ResultSet rs = stmt.executeQuery(query);
-            while (rs.next()) {
-                return rs.getInt("total");
+            try (ResultSet rs = stmt.executeQuery()){
+                while (rs.next()) {
+                    return rs.getInt(1);
+                }
             }
         } catch (SQLException e) {
             System.out.println(e);
