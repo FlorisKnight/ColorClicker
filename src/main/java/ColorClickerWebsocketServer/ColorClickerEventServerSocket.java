@@ -7,9 +7,11 @@ import java.util.HashSet;
 
 @ServerEndpoint(value = "/ColorClicker/")
 public class ColorClickerEventServerSocket {
-	private IColorClickerWebsocketServerMessageProcessor messageProcessor;
+	IColorClickerWebsocketServerMessageProcessor messageProcessor;
+	IColorClickerWebsocketLogic logic;
 
 	public ColorClickerEventServerSocket(IColorClickerWebsocketLogic logic , IColorClickerWebsocketServerMessageProcessor messageProcessor){
+		this.logic = logic;
 		this.messageProcessor = messageProcessor;
 	}
 
@@ -29,6 +31,11 @@ public class ColorClickerEventServerSocket {
 	@OnClose
 	public void onClose(javax.websocket.CloseReason reason, javax.websocket.Session session) {
 		System.out.println("[Session ID] : " + session.getId() + "[Socket Closed: " + reason);
+		try {
+			logic.RemoveGame(logic.getGame(session.getId()));
+		} catch (Exception e){
+			System.out.println(e);
+		}
 		sessions.remove(session);
 	}
 

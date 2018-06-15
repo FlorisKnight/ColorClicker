@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 
@@ -100,9 +101,9 @@ public class sceneGame {
         for (int row = 0; row < 8; row++) {
             for (int col = 0; col < 8; col++) {
                 Rectangle rec = new Rectangle();
-                rec.setWidth(60);
-                rec.setHeight(60);
-                rec.setFill(javafx.scene.paint.Color.RED);
+                rec.setWidth(55);
+                rec.setHeight(55);
+                rec.setFill(Color.LIGHTPINK);
                 //rec.setOnMousePressed((EventHandler<javafx.scene.input.MouseEvent>) event -> SquareClick(GridPane.getRowIndex( rec),GridPane.getColumnIndex( rec);
                 rec.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_PRESSED, event -> SquareClick(GridPane.getRowIndex( rec),GridPane.getColumnIndex( rec)));
                 GridPane.setRowIndex(rec, row);
@@ -146,27 +147,44 @@ public class sceneGame {
         logic.SquareClick(rowIndex, columnIndex);
     }
 
-    public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos){
-        Rectangle rec = new Rectangle();
-        rec.setWidth(60);
-        rec.setHeight(60);
-        rec.setFill(squareColor);
-        grid.add(rec,xPos,yPos);
+
+    public void UpdateSquares(javafx.scene.paint.Color squareColor, int yPos, int xPos){
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+                Rectangle rec = new Rectangle();
+                rec.setWidth(55);
+                rec.setHeight(55);
+                rec.setFill(squareColor);
+                rec.addEventFilter(javafx.scene.input.MouseEvent.MOUSE_PRESSED, event -> SquareClick(GridPane.getRowIndex( rec),GridPane.getColumnIndex( rec)));
+                grid.add(rec,xPos,yPos);
+            }
+        });
     }
 
     public void UpdatePlayerScore(int playerNr, int score){
-        if (playerNr == 0){
-            player1Points = String.valueOf(score);
-            lblPlayer1Points.setText(player1Points);
-        } else if (playerNr == 1){
-            player2Points = String.valueOf(score);
-            lblPlayer2Points.setText(player2Points);
-        }
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+                if (playerNr == 0){
+                    player1Points = String.valueOf(score);
+                    lblPlayer1Points.setText(player1Points);
+                } else if (playerNr == 1){
+                    player2Points = String.valueOf(score);
+                    lblPlayer2Points.setText(player2Points);
+                }
+            }
+        });
     }
 
     public void UpdatePlayerName(String playerName){
-        player2Name = playerName;
-        UpdateLabel(lblPlayer2, player2Name);
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+                player2Name = playerName;
+                UpdateLabel(lblPlayer2, player2Name);
+            }
+        });
     }
 
     public void UpdateTime(int time){

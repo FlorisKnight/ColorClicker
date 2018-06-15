@@ -81,6 +81,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
 
     public void JoinGameReceived(int gameId, String player1Name, String player2Name){
         game = new sceneGame(this, gameId, player1Name, player2Name);
+        controller.game(game);
     }
 
     //Getting Highscores

@@ -1,6 +1,7 @@
 package ColorClickerClient.View;
 
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
@@ -18,7 +19,12 @@ public class ColorClickerGUI extends Application implements IColorClickerClientG
     }
 
     public void Draw(Scene scene){
-        window.setScene(scene);
+        Platform.runLater(new Runnable(){
+            @Override
+            public void run(){
+                window.setScene(scene);
+            }
+        });
     }
 
 }

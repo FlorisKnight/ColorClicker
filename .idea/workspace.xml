@@ -2,103 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8b488c9-0fa0-49f8-bb71-a540fb8b921d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_javaee_api_7_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageProcessor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerMessageProcessor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModelHelper.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/CreateGameReceiveHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/EndGameHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/JoinGameReceiveHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdatePlayerNameHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdatePlayerScoreHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdateSquaresHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerServerMessageProcessor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketServerMessageProcessor.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModelHelperServer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/EndGame.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerName.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/CreateGameHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/JoinGameHandler.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/SquareClickHandler.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/SE3_Big_Idea_ColorClicker.iml" afterPath="$PROJECT_DIR$/SE3_Big_Idea_ColorClicker.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientCreateJoinGameLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientCreateJoinGameLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientGameLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientGameLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/REST/ColorClickerClientRESTBaseLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/REST/ColorClickerClientRESTBaseLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageCreator.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageCreator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageReader.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageCreator.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageCreator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageReader.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerEventClientSocket.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerEventClientSocket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/ColorClickerGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/ColorClickerGUI.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/IColorClickerClientGUI.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/IColorClickerClientGUI.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneCreateGame.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneCreateGame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneJoinGame.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneJoinGame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTServerDB.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTServerDB.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServer.java" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneHighscores.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneHighscores.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketMessageReader.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketRandomSquare.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketRandomSquare.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketStart.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketStart.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketMessageCreator.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketMessageCreator.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketMessageReader.java" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Game.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/CreateGame.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/CreateGame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/CreateGameReceive.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/CreateGameReceive.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/JoinGame.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/JoinGame.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/JoinGameReceive.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/JoinGameReceive.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/SaveScore.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/SquareClick.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/SquareClick.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/UpdatePlayerScore.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerScore.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/UpdateSquare.java" afterPath="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdateSquare.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/getHighscores.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WebsocketModels/jsonMessage.java" afterPath="$PROJECT_DIR$/src/main/java/Shared/jsonMessage.java" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/ColorClickerClientLogic.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/ColorClickerClientLogic.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/IColorClickerClientGameLogic.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/IColorClickerClientGameLogic.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/REST/ColorClickerClientRESTBaseLogic.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/REST/ColorClickerClientRESTBaseLogic.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageCreator.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageCreator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageCreator.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageCreator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/IColorClickerEventClientSocket.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/Logic/Websockets/IColorClickerEventClientSocket.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneController.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneCreateGame.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneCreateGame.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneJoinGame.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/sceneJoinGame.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerRESTServer/ColorClickerRESTServerDB.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerRESTServer/ColorClickerRESTServerDB.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerEventServer$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerEventServer.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerEventServerSocket.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerEventServerSocket.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketMessageReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketRandomSquare.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketRandomSquare.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketStart.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/ColorClickerWebsocketStart.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/IColorClickerWebsocketMessageCreator.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/IColorClickerWebsocketMessageCreator.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/IColorClickerWebsocketMessageReader.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Game$1.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Game.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/CreateGame.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/CreateGameReceive.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/JoinGame.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/JoinGameReceive.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/SaveScore.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/SquareClick.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/UpdatePlayerScore.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/UpdateSquare.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/getHighscores.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/WebsocketModels/jsonMessage.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/ColorClickerGUI.class" afterPath="$PROJECT_DIR$/target/classes/ColorClickerClient/View/ColorClickerGUI.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -154,81 +72,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="ColorClickerEventClientSocket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java">
+      <file leaf-file-name="ColorClickerServerMessageProcessor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerServerMessageProcessor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
+            <state relative-caret-position="376">
+              <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ColorClickerWebsocketGameLogic.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+              <folding>
+                <element signature="e#1522#1523#0" expanded="true" />
+                <element signature="e#1560#1561#0" expanded="true" />
+                <element signature="e#1834#1835#0" expanded="true" />
+                <element signature="e#1863#1864#0" expanded="true" />
+                <element signature="e#1914#1915#0" expanded="true" />
+                <element signature="e#1955#1956#0" expanded="true" />
+                <element signature="e#2006#2007#0" expanded="true" />
+                <element signature="e#2047#2048#0" expanded="true" />
+                <element signature="e#2103#2104#0" expanded="true" />
+                <element signature="e#2149#2150#0" expanded="true" />
+                <element signature="e#2919#3129#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Models/Player.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="369">
               <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sceneGame.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
               <folding>
-                <element signature="method#sceneGame#0;class#sceneGame#0" expanded="false" />
-                <element signature="method#sceneGame#1;class#sceneGame#0" expanded="false" />
-                <element signature="method#makeScene#0;class#sceneGame#0" expanded="false" />
-                <element signature="e#1828#1843#0" expanded="false" />
-                <element signature="e#4537#4538#0" expanded="true" />
-                <element signature="method#UpdateSquares#0;class#sceneGame#0" expanded="false" />
-                <element signature="method#UpdatePlayerScore#0;class#sceneGame#0" expanded="false" />
-                <element signature="method#UpdatePlayerName#0;class#sceneGame#0" expanded="false" />
-                <element signature="method#UpdateTime#0;class#sceneGame#0" expanded="false" />
-                <element signature="method#showMessage#0;class#sceneGame#0" expanded="false" />
-                <element signature="e#5594#5651#0" expanded="false" />
-                <element signature="class#5756:6081" expanded="false" />
-                <element signature="method#run#0;class#5756:6081" expanded="false" />
+                <element signature="e#510#511#0" expanded="true" />
+                <element signature="e#533#534#0" expanded="true" />
+                <element signature="e#603#604#0" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#694#695#0" expanded="true" />
+                <element signature="e#713#714#0" expanded="true" />
+                <element signature="e#749#750#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="sceneController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java">
+      <file leaf-file-name="SquareClickHandler.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/SquareClickHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding>
-                <element signature="e#1054#1055#0" expanded="true" />
-                <element signature="e#1103#1104#0" expanded="true" />
-                <element signature="e#1502#1503#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ColorClickerGUI.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/ColorClickerGUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-              <folding>
-                <element signature="e#593#594#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Stage.java" pinned="false" current-in-tab="false">
-        <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/stage/Stage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CallableMethod.class" pinned="false" current-in-tab="true">
-        <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/events/annotated/CallableMethod.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+            <state relative-caret-position="336">
+              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -263,22 +162,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/Shared/IMessageHandlerFactory.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/ClientMessageHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/BaseMessageHandler.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientGameLogic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Shared/IColorClickerMessageProcessor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerServerMessageHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTServerDB.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerMessageProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketServerMessageProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/Game.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneJoinGame.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerScore.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdateSquare.java" />
@@ -292,7 +181,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/JoinGame.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/SquareClick.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModelHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageProcessor.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/CreateGameReceiveHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/EndGameHandler.java" />
@@ -309,11 +197,22 @@
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/JoinGameHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/SquareClickHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketStart.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneCreateGame.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/IColorClickerClientGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/ColorClickerGUI.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java" />
         <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneHighscores.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/129f20ab-5470-4093-895c-2413b93f7bd3/console_2.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java" />
       </list>
     </option>
   </component>
@@ -394,57 +293,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="REST" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Websockets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Websockets" type="462c0819:PsiDirectoryNode" />
-              <item name="messageHandlers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
-              <item name="Logic" type="462c0819:PsiDirectoryNode" />
-              <item name="Websockets" type="462c0819:PsiDirectoryNode" />
-              <item name="MessageModels" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerClient" type="462c0819:PsiDirectoryNode" />
               <item name="View" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -453,14 +301,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ColorClickerRESTServer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SE3_Big_Idea_ColorClicker" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ColorClickerWebsocketServer" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -470,7 +310,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ColorClickerWebsocketServer" type="462c0819:PsiDirectoryNode" />
-              <item name="MessageModels" type="462c0819:PsiDirectoryNode" />
+              <item name="REST" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SE3_Big_Idea_ColorClicker" type="b2602c69:ProjectViewProjectNode" />
@@ -525,7 +365,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ColorClickerGUI">
+  <component name="RunManager" selected="Application.ColorClickerRestService">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -711,9 +551,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.ColorClickerGUI" />
-        <item index="1" class="java.lang.String" itemvalue="Application.ColorClickerWebsocketStart" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ColorClickerRestService" />
+        <item index="0" class="java.lang.String" itemvalue="Application.ColorClickerRestService" />
+        <item index="1" class="java.lang.String" itemvalue="Application.ColorClickerGUI" />
+        <item index="2" class="java.lang.String" itemvalue="Application.ColorClickerWebsocketStart" />
         <item index="3" class="java.lang.String" itemvalue="Application.Facebook" />
         <item index="4" class="java.lang.String" itemvalue="Application.gameMainWindow" />
       </list>
@@ -763,12 +603,12 @@
       <workItem from="1528969665024" duration="5607000" />
       <workItem from="1528977759543" duration="7797000" />
       <workItem from="1529044561272" duration="11327000" />
-      <workItem from="1529055917238" duration="10552000" />
+      <workItem from="1529055917238" duration="21261000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174142000" />
+    <option name="totallyTimeSpent" value="184851000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -781,7 +621,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.319337" sideWeight="0.50208336" order="8" side_tool="true" content_ui="tabs" />
@@ -789,12 +628,12 @@
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63778704" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17239584" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="JSF" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36243093" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36574584" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3116022" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -804,6 +643,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3127072" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1390625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32513967" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -815,7 +655,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947807" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32928178" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -829,7 +668,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java</url>
-          <line>116</line>
+          <line>117</line>
           <properties />
           <option name="timeStamp" value="28" />
         </line-breakpoint>
@@ -840,31 +679,37 @@
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTLogic.java</url>
-          <line>15</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java</url>
+          <line>82</line>
           <properties />
-          <option name="timeStamp" value="63" />
+          <option name="timeStamp" value="99" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.java</url>
-          <line>14</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java</url>
+          <line>146</line>
           <properties />
-          <option name="timeStamp" value="76" />
+          <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java</url>
-          <line>27</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java</url>
+          <line>157</line>
           <properties />
-          <option name="timeStamp" value="79" />
+          <option name="timeStamp" value="104" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java</url>
-          <line>54</line>
+          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java</url>
+          <line>81</line>
           <properties />
-          <option name="timeStamp" value="84" />
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java</url>
+          <line>173</line>
+          <properties />
+          <option name="timeStamp" value="110" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="85" />
+      <option name="time" value="111" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -873,215 +718,20 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/REST/ColorClickerClientRESTHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="36" column="104" lean-forward="false" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="104" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/EndGameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="14" column="32" lean-forward="false" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/JoinGameReceiveHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdatePlayerNameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" column="8" lean-forward="true" selection-start-line="15" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdatePlayerScoreHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="79" lean-forward="false" selection-start-line="17" selection-start-column="79" selection-end-line="17" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/UpdateSquaresHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="87" lean-forward="false" selection-start-line="16" selection-start-column="87" selection-end-line="16" selection-end-column="87" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/REST/ResponseHelper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="21" column="5" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="21" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/EndGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/JoinGameReceive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerName.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="29" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerScore.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" column="50" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdateSquare.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="55" lean-forward="false" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketServerMessageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="9" lean-forward="false" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketMessageCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModelHelperServer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        <state relative-caret-position="76">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java">
+    <entry file="jar://$PROJECT_DIR$/../Big idea/selenium/libs/gson-2.8.2.jar!/com/google/gson/Gson.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-245">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/IColorClickerClientWebsocketMessageCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/JoinGameHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/CreateGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#302#303#0" expanded="true" />
-            <element signature="e#333#334#0" expanded="true" />
-            <element signature="e#395#396#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/paint/Paint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModels/SquareClick.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="15" lean-forward="false" selection-start-line="11" selection-start-column="15" selection-end-line="11" selection-end-column="15" />
-          <folding>
-            <element signature="e#262#263#0" expanded="false" />
-            <element signature="e#289#290#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/SquareClickHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="17" column="39" lean-forward="false" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="40" column="16" lean-forward="false" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding>
-            <element signature="method#onConnect#0;class#ColorClickerEventServerSocket#0" expanded="false" />
-            <element signature="method#onClose#0;class#ColorClickerEventServerSocket#0" expanded="false" />
-            <element signature="method#onError#0;class#ColorClickerEventServerSocket#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketStart.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="357" column="0" lean-forward="false" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1089,17 +739,150 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketMessageCreator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerServerMessageProcessor.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/io/AbstractWebSocketConnection.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="27" column="36" lean-forward="false" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="36" />
+        <state relative-caret-position="181">
+          <caret line="150" column="0" lean-forward="false" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="e#5603#5604#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.2.7.v20150116/javax-websocket-client-impl-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/jsr356/AbstractJsrRemote.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.2.7.v20150116/javax-websocket-client-impl-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/jsr356/JsrBasicRemote.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="e#943#944#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Shared/jsonMessage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#271#272#0" expanded="true" />
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerEventServerSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="method#onConnect#0;class#ColorClickerEventServerSocket#0" expanded="false" />
+            <element signature="method#onError#0;class#ColorClickerEventServerSocket#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/beans/property/StringPropertyBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="145" column="0" lean-forward="false" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding>
+            <element signature="e#3875#3876#0" expanded="false" />
+            <element signature="e#3916#3917#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/beans/property/StringProperty.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#1467#1468#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/scene/control/Labeled.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="144" column="45" lean-forward="false" selection-start-line="144" selection-start-column="45" selection-end-line="144" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/JoinGameReceiveHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/MessageModelHelper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="101" column="0" lean-forward="false" selection-start-line="101" selection-start-column="0" selection-end-line="101" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.2.7.v20150116/javax-websocket-client-impl-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/jsr356/JsrSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="method#ColorClickerEventClientSocket#0;class#ColorClickerEventClientSocket#0" expanded="false" />
+            <element signature="method#stop#0;class#ColorClickerEventClientSocket#0" expanded="false" />
+            <element signature="e#980#981#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1115,135 +898,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketRandomSquare.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="9" lean-forward="false" selection-start-line="8" selection-start-column="9" selection-end-line="8" selection-end-column="9" />
+        <state relative-caret-position="187">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketGameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="509">
-          <caret line="32" column="41" lean-forward="true" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
+        <state relative-caret-position="474">
+          <caret line="24" column="32" lean-forward="true" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/IColorClickerClientCreateJoinGameLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
-          <folding />
+    <entry file="das://table:/527fb330/129f20ab-5470-4093-895c-2413b93f7bd3/dbi359176.dbo.users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="%%physloc%%" enabled="false" />
+          </column-attributes>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneCreateGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="88" column="42" lean-forward="true" selection-start-line="88" selection-start-column="42" selection-end-line="88" selection-end-column="42" />
-          <folding>
-            <element signature="e#1783#1784#0" expanded="true" />
-            <element signature="e#1827#1828#0" expanded="true" />
-          </folding>
+    <entry file="das://table:/527fb330/129f20ab-5470-4093-895c-2413b93f7bd3/dbi359176.dbo.highscores">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+          <column-attributes>
+            <column name="%%physloc%%" enabled="false" />
+          </column-attributes>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../Big idea/selenium/libs/gson-2.8.2.jar!/com/google/gson/Gson.class">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/REST/ColorClickerClientRESTBaseLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Shared/jsonMessage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="e#241#242#0" expanded="false" />
-            <element signature="e#271#272#0" expanded="false" />
-            <element signature="e#333#334#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerClientMessageProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/CreateGameReceive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="e#304#305#0" expanded="false" />
-            <element signature="e#333#334#0" expanded="false" />
-            <element signature="e#403#404#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/messageHandlers/CreateGameReceiveHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/ColorClickerClientLogic.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="67" column="0" lean-forward="false" selection-start-line="67" selection-start-column="0" selection-end-line="67" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/io/AbstractWebSocketConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="229" column="30" lean-forward="false" selection-start-line="229" selection-start-column="30" selection-end-line="229" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/Parser.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/extensions/ExtensionStack.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
-          <folding>
-            <element signature="e#5753#5754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/WebSocketSession.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/events/AbstractEventDriver.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+        <state relative-caret-position="181">
+          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1258,77 +952,264 @@
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/javax-websocket-client-impl/9.2.7.v20150116/javax-websocket-client-impl-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/jsr356/endpoints/JsrAnnotatedEventDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
+        <state relative-caret-position="160">
           <caret line="238" column="0" lean-forward="false" selection-start-line="238" selection-start-column="0" selection-end-line="238" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/Logic/Websockets/ColorClickerEventClientSocket.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/events/AbstractEventDriver.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        <state relative-caret-position="160">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/WebSocketSession.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="141" column="0" lean-forward="false" selection-start-line="141" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding>
-            <element signature="method#sceneGame#0;class#sceneGame#0" expanded="false" />
-            <element signature="method#sceneGame#1;class#sceneGame#0" expanded="false" />
-            <element signature="method#makeScene#0;class#sceneGame#0" expanded="false" />
-            <element signature="e#1828#1843#0" expanded="false" />
-            <element signature="e#4537#4538#0" expanded="true" />
-            <element signature="method#UpdateSquares#0;class#sceneGame#0" expanded="false" />
-            <element signature="method#UpdatePlayerScore#0;class#sceneGame#0" expanded="false" />
-            <element signature="method#UpdatePlayerName#0;class#sceneGame#0" expanded="false" />
-            <element signature="method#UpdateTime#0;class#sceneGame#0" expanded="false" />
-            <element signature="method#showMessage#0;class#sceneGame#0" expanded="false" />
-            <element signature="e#5594#5651#0" expanded="false" />
-            <element signature="class#5756:6081" expanded="false" />
-            <element signature="method#run#0;class#5756:6081" expanded="false" />
-          </folding>
+        <state relative-caret-position="181">
+          <caret line="226" column="0" lean-forward="false" selection-start-line="226" selection-start-column="0" selection-end-line="226" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#1054#1055#0" expanded="true" />
-            <element signature="e#1103#1104#0" expanded="true" />
-            <element signature="e#1502#1503#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/ColorClickerGUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#593#594#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/javafx-src.zip!/javafx/stage/Stage.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/extensions/ExtensionStack.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
-          <caret line="250" column="0" lean-forward="false" selection-start-line="250" selection-start-column="0" selection-end-line="250" selection-end-column="0" />
+          <caret line="172" column="0" lean-forward="false" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding>
+            <element signature="e#5753#5754#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/Parser.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="190" column="0" lean-forward="false" selection-start-line="190" selection-start-column="0" selection-end-line="190" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/jetty/websocket/websocket-common/9.2.7.v20150116/websocket-common-9.2.7.v20150116.jar!/org/eclipse/jetty/websocket/common/events/annotated/CallableMethod.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="64" column="29" lean-forward="true" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
+        <state relative-caret-position="139">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneHighscores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="85" column="16" lean-forward="false" selection-start-line="85" selection-start-column="16" selection-end-line="85" selection-end-column="16" />
+          <folding>
+            <element signature="method#sceneHighscores#0;class#sceneHighscores#0" expanded="false" />
+            <element signature="e#2931#2932#0" expanded="true" />
+            <element signature="e#2959#2960#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/IColorClickerWebsocketLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Score.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_162/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="698" column="29" lean-forward="false" selection-start-line="698" selection-start-column="29" selection-end-line="698" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="e#2947#2948#0" expanded="true" />
+            <element signature="e#2981#2982#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/dtoWebsockets/SetHighscoresPUTDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#451#452#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#507#508#0" expanded="true" />
+            <element signature="e#535#536#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTServerDB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <marker date="1529054012340" expanded="true" signature="718:765" ph="SELECT score... highscores" />
+            <marker date="1529054012340" expanded="true" signature="1443:1508" ph="Insert into highscores... " />
+            <marker date="1529054012340" expanded="true" signature="2168:2218" ph="INSERT into users... " />
+            <marker date="1529054012340" expanded="true" signature="2818:2861" ph="SELECT usern... users" />
+            <marker date="1529054012340" expanded="true" signature="3541:3584" ph="SELECT count... users" />
+            <marker date="1529054012340" expanded="true" signature="4246:4291" ph="SELECT count... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.7/jersey-server-2.7.jar!/org/glassfish/jersey/server/model/internal/ResourceMethodInvocationHandlerFactory.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/glassfish/jersey/core/jersey-server/2.7/jersey-server-2.7.jar!/org/glassfish/jersey/server/model/internal/AbstractJavaResourceMethodDispatcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="112" column="0" lean-forward="false" selection-start-line="112" selection-start-column="0" selection-end-line="112" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/UpdatePlayerScore.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/REST/ColorClickerWebsocketRESTHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/129f20ab-5470-4093-895c-2413b93f7bd3/console_2.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/MessageModels/JoinGameReceive.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerRESTServer/ColorClickerRESTResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="78" column="19" lean-forward="false" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerClient/View/sceneGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="157" column="19" lean-forward="true" selection-start-line="157" selection-start-column="19" selection-end-line="157" selection-end-column="19" />
+          <folding>
+            <element signature="method#sceneGame#0;class#sceneGame#0" expanded="false" />
+            <element signature="e#1861#1876#0" expanded="false" />
+            <element signature="e#4529#4530#0" expanded="true" />
+            <element signature="e#4557#4558#0" expanded="true" />
+            <element signature="e#4620#4621#0" expanded="true" />
+            <element signature="e#4676#4677#0" expanded="true" />
+            <element signature="method#UpdateTime#0;class#sceneGame#0" expanded="false" />
+            <element signature="method#showMessage#0;class#sceneGame#0" expanded="false" />
+            <element signature="e#6251#6308#0" expanded="false" />
+            <element signature="e#6800#6801#0" expanded="true" />
+            <element signature="e#6833#6834#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerServerMessageProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/messageHandlers/SquareClickHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+          <folding>
+            <element signature="e#510#511#0" expanded="true" />
+            <element signature="e#533#534#0" expanded="true" />
+            <element signature="e#603#604#0" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#694#695#0" expanded="true" />
+            <element signature="e#713#714#0" expanded="true" />
+            <element signature="e#749#750#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ColorClickerWebsocketServer/ColorClickerWebsocketGameLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="173" column="0" lean-forward="false" selection-start-line="173" selection-start-column="0" selection-end-line="173" selection-end-column="0" />
+          <folding>
+            <element signature="e#1522#1523#0" expanded="true" />
+            <element signature="e#1560#1561#0" expanded="true" />
+            <element signature="e#1834#1835#0" expanded="true" />
+            <element signature="e#1863#1864#0" expanded="true" />
+            <element signature="e#1914#1915#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+            <element signature="e#2006#2007#0" expanded="true" />
+            <element signature="e#2047#2048#0" expanded="true" />
+            <element signature="e#2103#2104#0" expanded="true" />
+            <element signature="e#2149#2150#0" expanded="true" />
+            <element signature="e#2919#3129#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

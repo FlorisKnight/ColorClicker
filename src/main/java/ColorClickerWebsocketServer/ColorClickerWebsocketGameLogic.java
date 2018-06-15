@@ -17,6 +17,8 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
     Timer timer;
     Thread randomSquare;
     Random r;
+    String gametype;
+    boolean start;
 
     IColorClickerWebsocketLogic logic;
 
@@ -26,22 +28,25 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
         field = new Object[8][8];
         this.logic = logic;
         r = new Random();
+        this.gametype = gametype;
+        start = false;
         if (gametype != "Classic")
             randomSquare = new Thread(new ColorClickerWebsocketRandomSquare(this, gametype));
     }
 
     @Override
     public void SquareClick(String sessionID, int xpos, int ypos){
-        if (player1.getSessionID().equals(sessionID) && !field[xpos][ypos].equals(player1))
-            UpdateSquares(player1, xpos, ypos);
-        else if(player2.getSessionID().equals(sessionID) && !field[xpos][ypos].equals(player2))
-            UpdateSquares(player2, xpos, ypos);
+        if (start) {
+            if (player1.getSessionID().equals(sessionID) && (field[xpos][ypos] == null || !field[xpos][ypos].equals(player1)))
+                UpdateSquares(player1, xpos, ypos);
+            else if (player2.getSessionID().equals(sessionID) && (field[xpos][ypos] == null || !field[xpos][ypos].equals(player2)))
+                UpdateSquares(player2, xpos, ypos);
+        }
     }
 
     @Override
     public void AddPlayer(Player player2){
         this.player2 = player2;
-        StartGame();
     }
 
     @Override
@@ -89,7 +94,8 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
         }
     }
 
-    private void StartGame(){
+    @Override
+    public void StartGame(){
         //Start timer
         timer = new Timer();
         if (randomSquare != null)
@@ -102,6 +108,15 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
                     randomSquare.interrupt();
             }
         }, 1*60*1000);
+        start = true;
+    }
+
+    @Override
+    public boolean checkAvailability(){
+        if (player2 == null)
+            return true;
+        else
+            return false;
     }
 
     private String getWinner(){
@@ -134,7 +149,7 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
         if (field[xpos][ypos] instanceof Color){
             Color color = (Color)field[xpos][ypos];
             player.addScore(color.getPoint());
-        } else if(field[xpos][ypos].equals(player)){
+        } else if(field[xpos][ypos] == null || field[xpos][ypos] instanceof Player){
             player.addScore(1);
         }
     }
@@ -143,7 +158,8 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
         if (object instanceof Player){
             Player player = (Player)object;
             addScore(player, xpos, ypos);
-            logic.UpdateSquares(player.getColor(), xpos, ypos, player.getSessionID());
+            logic.UpdateSquares(player.getColor(), xpos, ypos, player1.getSessionID());
+            logic.UpdateSquares(player.getColor(), xpos, ypos, player2.getSessionID());
         } else if (object instanceof Color){
             Color color = (Color)object;
             logic.UpdateSquares(color.getColor(), xpos, ypos, player1.getSessionID());
@@ -155,6 +171,8 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
     private void EndGame(){
         logic.EndGameMessage(player1.getSessionID(), getWinner());
         logic.EndGameMessage(player2.getSessionID(), getWinner());
+        logic.UploadScores(player1.getName(), player1.getScore(), gametype);
+        logic.UploadScores(player2.getName(), player1.getScore(), gametype);
         logic.RemoveGame(this);
     }
 }

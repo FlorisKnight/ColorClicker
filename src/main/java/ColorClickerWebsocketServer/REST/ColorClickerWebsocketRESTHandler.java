@@ -14,7 +14,7 @@ public class ColorClickerWebsocketRESTHandler extends ColorClickerClientRESTBase
     @Override
     public void setScore(Score score) {
         SetHighscoresPUTDto dto = new SetHighscoresPUTDto(score);
-        executeQueryPut(dto, getQuery("/Highscores/put/"), BoolResultDto.class);
+        executeQueryPost(dto, getQuery("/Highscores/put/"), BoolResultDto.class);
     }
 
     @Override

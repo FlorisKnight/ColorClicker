@@ -73,16 +73,15 @@ public class ColorClickerRESTResponse {
 
     }
 
-    @PUT
+    @POST
     @Path("/Highscores/put")
     @Consumes("application/json")
-    public void setHighscore(String data) {
+    public Response setHighscore(String data) {
         Gson gson = new Gson();
         SetHighscoresPUTDto setHighscoresPUTDto = gson.fromJson(data, SetHighscoresPUTDto.class);
-        restLogic.saveScores(setHighscoresPUTDto.getName(), setHighscoresPUTDto.getScore(), setHighscoresPUTDto.getGameType());
+        boolean check = restLogic.saveScores(setHighscoresPUTDto.getName(), setHighscoresPUTDto.getScore(), setHighscoresPUTDto.getGameType());
+        return Response.status(200).entity(ResponseHelper.getBooleanResultDtoResponseString(check)).build();
     }
-
-    //TODO get highscore????
 
     @GET
     @Path("/Highscores/get")

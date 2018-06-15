@@ -17,4 +17,6 @@ public interface IColorClickerWebsocketLogic {
 	void RemoveGame(ColorClickerWebsocketGameLogic game);
 
 	ColorClickerWebsocketGameLogic getGame(String sessionId);
+
+	void UploadScores(String name, int score, String gameType);
 }

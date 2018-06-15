@@ -44,10 +44,12 @@ public class sceneHighscores {
 //Define grid pane
         GridPane gridLeaderboard = new GridPane();
         gridLeaderboard.setVgap(10);
+        gridLeaderboard.setHgap(20);
 
         //Define scroll pane
         javafx.scene.control.ScrollPane scrollPane = new javafx.scene.control.ScrollPane(gridLeaderboard);
-        scrollPane.setMaxWidth(100);
+        scrollPane.setMaxWidth(500);
+        scrollPane.setMinWidth(500);
 
         //Define vbox pane
         VBox vbox = new VBox();
@@ -74,18 +76,20 @@ public class sceneHighscores {
         gridLeaderboard.add(lblName, 2,0);
 
         lblGameType = new Label("Gametype");
-        gridLeaderboard.add(lblGameType, 2,0);
+        gridLeaderboard.add(lblGameType, 3,0);
 
         int i = 1;
         for (Score s: highscores) {
             gridLeaderboard.add(new Label(String.valueOf(s.getScore())), 1,i);
             gridLeaderboard.add(new Label(s.getName()), 2,i);
             gridLeaderboard.add(new Label(s.getGameType()), 3,i);
+            i++;
         }
 
         // Button to go back to sceneHomeScreen
         Tooltip tooltipCollection =
                 new Tooltip("Press to go back");
+        btnBack = new Button("Back");
         btnBack.setTooltip(tooltipCollection);
         btnBack.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
@@ -96,6 +100,10 @@ public class sceneHighscores {
         vbox.getChildren().addAll(btnBack);
 
         // Define title and assign the scene for main window
+        return scene;
+    }
+
+    public Scene getScene() {
         return scene;
     }
 

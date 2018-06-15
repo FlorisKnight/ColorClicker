@@ -4,6 +4,8 @@ import Models.Player;
 
 public interface IColorClickerWebsocketGameLogic {
 
+    void StartGame();
+
     void SquareClick(String sessionID, int xpos, int ypos);
 
     void AddPlayer(Player player2);
@@ -19,4 +21,6 @@ public interface IColorClickerWebsocketGameLogic {
     String getPlayer1SessionID();
 
     void placeRandomSquare();
+
+    boolean checkAvailability();
 }

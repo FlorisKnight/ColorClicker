@@ -2,6 +2,8 @@ package ColorClickerWebsocketServer;
 
 import ColorClickerWebsocketServer.REST.ColorClickerWebsocketRESTHandler;
 import Models.Player;
+import Models.Score;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 
@@ -24,16 +26,18 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
     }
 
     public void CreateGame(String gametype, String userId, String sessionId){
-        ColorClickerWebsocketGameLogic game = new ColorClickerWebsocketGameLogic(gameId++, CreatePlayer(userId, sessionId, new javafx.scene.paint.Color(1,0,0,0)), this, gametype);
+        ColorClickerWebsocketGameLogic game = new ColorClickerWebsocketGameLogic(gameId++, CreatePlayer(userId, sessionId, Color.RED), this, gametype);
+        games.add(game);
         messageCreator.MessageCreator("CreateGameReceive", MessageModelHelperServer.getCreateGameRevieveString(game.getGameId(), game.getPlayer1Name()), sessionId);
     }
 
     public void JoinGame(int gameId, String userId, String sessionId){
         for (ColorClickerWebsocketGameLogic g: games){
-            if (gameId == g.getGameId()){
-               g.AddPlayer(CreatePlayer(userId, sessionId, javafx.scene.paint.Color.color(0,0,1,0)));
-               messageCreator.MessageCreator("JoinGameRecieve", MessageModelHelperServer.getJoinGameReceiveString(g.getGameId(),g.getPlayer1Name(),g.getPlayer2Name()), sessionId);
+            if (gameId == g.getGameId() && g.checkAvailability()){
+               g.AddPlayer(CreatePlayer(userId, sessionId, Color.BLUE));
+               messageCreator.MessageCreator("JoinGameReceive", MessageModelHelperServer.getJoinGameReceiveString(g.getGameId(),g.getPlayer1Name(),g.getPlayer2Name()), sessionId);
                messageCreator.MessageCreator("UpdatePlayer", MessageModelHelperServer.getUpdatePlayerNameString(g.getPlayer2Name()), g.getPlayer1SessionID());
+               g.StartGame();
             }
         }
     }
@@ -62,5 +66,9 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic{
 
     public void RemoveGame(ColorClickerWebsocketGameLogic game){
         games.remove(game);
+    }
+
+    public void UploadScores(String name, int score, String gameType) {
+        REST.setScore(new Score(name, score, gameType));
     }
 }

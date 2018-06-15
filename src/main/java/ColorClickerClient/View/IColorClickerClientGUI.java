@@ -8,6 +8,6 @@ public interface IColorClickerClientGUI {
 	 * 
 	 * @param guiScene
 	 */
-	public void Draw(Scene guiScene);
+	void Draw(Scene guiScene);
 
 }

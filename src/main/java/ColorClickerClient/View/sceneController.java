@@ -49,6 +49,7 @@ public class sceneController {
 
     public void highscores(ArrayList<Score> highscoresList){
         highscores = new sceneHighscores(this,highscoresList);
+        application.Draw(highscores.getScene());
     }
 
     public void game(sceneGame scene){
