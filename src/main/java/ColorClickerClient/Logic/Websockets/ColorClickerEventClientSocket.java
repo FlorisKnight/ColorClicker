@@ -1,42 +1,40 @@
 package ColorClickerClient.Logic.Websockets;
 
-import ColorClickerClient.View.sceneGame;
-
 import javax.websocket.*;
 import java.io.IOException;
 import java.net.URI;
 
-
+@ClientEndpoint
 public class ColorClickerEventClientSocket implements IColorClickerEventClientSocket{
-	IColorClickerClientWebsocketMessageReader handler;
-	private javax.websocket.Session session;
-	sceneGame game;
+	IColorClickerMessageProcessor messageProcessor;
+	private Session session;
+	private static final String uri = "ws://localhost:8096/ColorClicker/";
 
-	public ColorClickerEventClientSocket(IColorClickerClientWebsocketMessageReader handler){
-		this.handler = handler;
-		setupSocket();
+	public ColorClickerEventClientSocket(IColorClickerMessageProcessor messageProcessor){
+		this.messageProcessor = messageProcessor;
+		start();
 	}
 
-	private void setupSocket() {
-		URI uri = URI.create("ws://localhost:8096/wstest/");
+	@Override
+	public void start() {
 		try {
-			javax.websocket.WebSocketContainer container = javax.websocket.ContainerProvider.getWebSocketContainer();
-			try {
-				// Attempt Connect
-				session = container.connectToServer(this, uri);
-			} finally {
-				// Force lifecycle stop when done with container.
-				// This is to free up threads and resources that the
-				// JSR-356 container allocates. But unfortunately
-				// the JSR-356 spec does not handle lifecycles (yet)
-				if (container instanceof org.eclipse.jetty.util.component.LifeCycle) {
-				 ((org.eclipse.jetty.util.component.LifeCycle) container).stop();
-				 }
-			}
+			WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+			// Attempt Connect
+			session = container.connectToServer(this, new URI(uri));
 		} catch (Throwable t) {
 			t.printStackTrace(System.err);
 		}
+	}
 
+	@Override
+	public void stop() {
+		try {
+			if(session != null)
+				session.close();
+
+		} catch (Exception ex){
+			System.out.println(ex);
+		}
 	}
 
     @OnOpen
@@ -46,7 +44,7 @@ public class ColorClickerEventClientSocket implements IColorClickerEventClientSo
 	@OnMessage
 	public void onWebSocketText(String message) {
 		System.out.println("[Received]: " + message);
-		handler.MessageReader(message);
+		messageProcessor.processMessage(message);
 	}
 	@OnClose
 	public void onWebSocketClose(CloseReason reason) {
@@ -57,6 +55,7 @@ public class ColorClickerEventClientSocket implements IColorClickerEventClientSo
 		System.out.println("[ERROR]: " + cause.getMessage());
 	}
 
+	@Override
 	public void sendMessageToServer(String message)
 	{
 		try {

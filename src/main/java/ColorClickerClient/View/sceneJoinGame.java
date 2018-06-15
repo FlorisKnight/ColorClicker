@@ -57,7 +57,7 @@ public class sceneJoinGame {
 
         //Hbox buttons
         // Button to Join game
-        btnJoinGame = new Button("Join Game");
+        btnJoinGame = new Button("Join game");
         Tooltip tooltipStartGame =
                 new Tooltip("Press to join game");
         btnJoinGame.setTooltip(tooltipStartGame);

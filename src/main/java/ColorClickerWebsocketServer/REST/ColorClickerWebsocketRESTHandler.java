@@ -20,7 +20,7 @@ public class ColorClickerWebsocketRESTHandler extends ColorClickerClientRESTBase
     @Override
     public String getPlayerName(String userId) {
         GetPlayerRequestDto dto = new GetPlayerRequestDto(userId);
-        GetPlayerResultDto result = executeQueryPost(dto, getQuery("/player/getPlayer"), GetPlayerResultDto.class);
+        GetPlayerResultDto result = executeQueryPost(dto, getQuery("/player/getPlayer/"), GetPlayerResultDto.class);
         return result.getName();
     }
 

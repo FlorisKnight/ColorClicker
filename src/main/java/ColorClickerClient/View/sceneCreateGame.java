@@ -57,13 +57,13 @@ public class sceneCreateGame {
         Scene scene = new Scene(root, 800, 600);
 
         // Button to Create game
-        btnCreateGame = new Button("Create Game");
+        btnCreateGame = new Button("Create game");
         Tooltip tooltipStartGame =
-                new Tooltip("Press to Game");
+                new Tooltip("Press to create game");
         btnCreateGame.setTooltip(tooltipStartGame);
         btnCreateGame.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
-                CreateGame(tgGametype.selectedToggleProperty().toString());
+                CreateGame();
             }
         });
 
@@ -100,8 +100,13 @@ public class sceneCreateGame {
         return scene;
     }
 
-    public void CreateGame(String gameType){
-        logic.CreateGameSend(gameType);
+    public void CreateGame(){
+        if(rbClassic.isSelected())
+            logic.CreateGameSend("Classic");
+        else if(rbNormal.isSelected())
+            logic.CreateGameSend("Normal");
+        else if(rbFast.isSelected())
+            logic.CreateGameSend("Fast");
     }
 
     public void Back(){

@@ -8,6 +8,6 @@ public interface IColorClickerWebsocketMessageCreator {
 	 * @param object
 	 * @param sessionId
 	 */
-	public void MessageCreator(String action, Object object, String sessionId);
+	public void MessageCreator(String action, String object, String sessionId);
 
 }

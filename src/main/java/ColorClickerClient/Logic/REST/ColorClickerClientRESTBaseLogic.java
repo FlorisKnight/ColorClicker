@@ -1,13 +1,10 @@
 package ColorClickerClient.Logic.REST;
 
 import ColorClickerClient.Logic.REST.dto.BaseRequestDto;
-import WebsocketModels.getHighscores;
-import WebsocketModels.jsonMessage;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.*;
-import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;

@@ -1,7 +1,5 @@
 package ColorClickerWebsocketServer;
 
-import Models.Game;
-
 import java.util.Random;
 
 public class ColorClickerWebsocketRandomSquare implements Runnable {
@@ -9,10 +7,10 @@ public class ColorClickerWebsocketRandomSquare implements Runnable {
     int MAX_TICKS = 12;
     boolean running = false;
     Random r = new Random();
-    Game game;
+    ColorClickerWebsocketGameLogic game;
     String gametype;
 
-    public ColorClickerWebsocketRandomSquare(Game game, String gametype){
+    public ColorClickerWebsocketRandomSquare(ColorClickerWebsocketGameLogic game, String gametype){
         this.game = game;
         this.gametype = gametype;
         switch(gametype){

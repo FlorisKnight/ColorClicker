@@ -1,9 +1,6 @@
 package ColorClickerRESTServer;
 
-import Models.Player;
 import Models.Score;
-import WebsocketModels.SaveScore;
-
 import java.sql.*;
 import java.util.ArrayList;
 

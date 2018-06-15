@@ -1,31 +1,29 @@
 package ColorClickerClient.Logic;
 
 import ColorClickerClient.Logic.REST.ColorClickerClientRESTHandler;
-import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageCreator;
-import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageReader;
-import ColorClickerClient.Logic.Websockets.ColorClickerEventClientSocket;
+import ColorClickerClient.Logic.REST.IColorClickerClientRESTHandler;
+import ColorClickerClient.Logic.REST.ResponseHelper;
+import ColorClickerClient.Logic.Websockets.*;
+import ColorClickerClient.Logic.Websockets.MessageModels.CreateGame;
+import ColorClickerClient.Logic.Websockets.MessageModels.JoinGame;
+import ColorClickerClient.Logic.Websockets.MessageModels.SquareClick;
 import ColorClickerClient.View.sceneController;
 import ColorClickerClient.View.sceneGame;
-import WebsocketModels.*;
-import javafx.scene.Scene;
+import ColorClickerClient.Logic.Websockets.IColorClickerMessageProcessor;
 import ColorClickerClient.Logic.OAuth.*;
+import javafx.scene.paint.Color;
 
 public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGameLogic,IColorClickerClientGameLogic,IColorClickerClientHighscoreLogic,IColorClickerClientSignInSignUpLogic {
-    private ColorClickerClientMessageCreator messageCreator;
-    private sceneGame game;
-    private String userId;
-    private sceneController controller;
-    private ColorClickerClientRESTHandler restHandler;
-    private ColorClickerEventClientSocket clientSocket;
-    private ColorClickerClientMessageReader handler;
-    private FacebookOAuth oAuth;
+    IColorClickerClientWebsocketMessageCreator messageCreator;
+    sceneGame game;
+    String userId;
+    sceneController controller;
+    IColorClickerClientRESTHandler restHandler;
+    FacebookOAuth oAuth;
 
-    public ColorClickerClientLogic(sceneController controller, Scene scene){
+    public ColorClickerClientLogic(sceneController controller){
         this.controller = controller;
         restHandler = new ColorClickerClientRESTHandler();
-        handler = new ColorClickerClientMessageReader(this);
-        clientSocket = new ColorClickerEventClientSocket(handler);
-        messageCreator = new ColorClickerClientMessageCreator(clientSocket);
         oAuth = new FacebookOAuth();
     }
 
@@ -40,6 +38,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
         }
         if (facebookId != null && restHandler.SignIn(facebookId)){
             userId = facebookId;
+            websocketConnect();
             controller.homeScene();
         }
     }
@@ -53,6 +52,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
         }
         if (facebookId != null && name != null && restHandler.SignUp(facebookId, name)){
             userId = facebookId;
+            websocketConnect();
             controller.homeScene();
         }
     }
@@ -60,14 +60,11 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
     //Creating a game
 
     public void CreateGameSend(String gametype){
-        messageCreator.MessageCreator("CreateGame", new CreateGame(gametype, userId));
+        messageCreator.MessageCreator("CreateGame", MessageModelHelper.getCreateGameString(gametype, userId));
     }
 
-    public void CreateGameReceive(CreateGameReceive object){
-        int gameID = object.getGameID();
-        String playerName = object.getPlayerName();
-
-        game = new sceneGame(this, gameID, playerName);
+    public void CreateGameReceive(int gameId, String player){
+        game = new sceneGame(this, gameId, player);
         controller.game(game);
     }
 
@@ -76,18 +73,14 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
     public void JoinGameSend(String gameIDTXT){
         try{
             int gameID = Integer.valueOf(gameIDTXT);
-            messageCreator.MessageCreator("JoinGame", new JoinGame(gameID, userId));
+            messageCreator.MessageCreator("JoinGame", MessageModelHelper.getJoinGameString(gameID, userId));
         } catch (Exception e){
             System.out.println(e);
         }
     }
 
-    public void JoinGameReceived(JoinGameReceive object){
-        int gameID = object.getGameID();
-        String player1Name = object.getPlayer1Name();
-        String player2Name = object.getPlayer2Name();
-
-        game = new sceneGame(this, gameID, player1Name, player2Name);
+    public void JoinGameReceived(int gameId, String player1Name, String player2Name){
+        game = new sceneGame(this, gameId, player1Name, player2Name);
     }
 
     //Getting Highscores
@@ -97,7 +90,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
         controller.highscores(restHandler.getHighscores());
     }
 
-    //Game Logic
+    //ColorClickerWebsocketGameLogic Logic
 
     public void EndGame(String playerName){
         game.showMessage(playerName + " has won!");
@@ -105,22 +98,15 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
     }
 
     public void SquareClick(int xPos, int yPos){
-        messageCreator.MessageCreator("SquareClick", new SquareClick(xPos, yPos));
+        messageCreator.MessageCreator("SquareClick", MessageModelHelper.getSquareClickString(xPos, yPos));
     }
 
-    public void UpdateSquares(UpdateSquare object){
-        javafx.scene.paint.Color squareColor = object.getColor();
-        int xPos = object.getxPos();
-        int yPos = object.getyPos();
-
-        game.UpdateSquares(squareColor, xPos, yPos);
+    public void UpdateSquares(int xPos, int yPos, Color color){
+        game.UpdateSquares(color, xPos, yPos);
     }
 
-    public void UpdatePlayerScore(UpdatePlayerScore object){
-        int playerNr = object.getPlayer();
-        int score = object.getScore();
-
-        game.UpdatePlayerScore(playerNr, score);
+    public void UpdatePlayerScore(int player, int score){
+        game.UpdatePlayerScore(player, score);
     }
 
     public void UpdatePlayerName(String playerName){
@@ -129,5 +115,11 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
 
     public void UpdateTime(int time){
         game.UpdateTime(time);
+    }
+
+    private void websocketConnect(){
+        IColorClickerMessageProcessor messageProcessor = new ColorClickerClientMessageProcessor(this);
+        IColorClickerEventClientSocket clientSocket = new ColorClickerEventClientSocket(messageProcessor);
+        messageCreator = new ColorClickerClientMessageCreator(clientSocket);
     }
 }

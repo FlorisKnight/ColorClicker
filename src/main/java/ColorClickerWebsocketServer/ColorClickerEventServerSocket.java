@@ -1,41 +1,38 @@
 package ColorClickerWebsocketServer;
 
-import ColorClickerClient.Logic.Websockets.ColorClickerClientMessageReader;
-import ColorClickerClient.Logic.Websockets.ColorClickerEventClientSocket;
-
-import javax.websocket.Session;
+import javax.websocket.*;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
 import java.util.HashSet;
 
-@ServerEndpoint(value = "/wstest/")
+@ServerEndpoint(value = "/ColorClicker/")
 public class ColorClickerEventServerSocket {
-	private IColorClickerWebsocketMessageReader messageReader;
+	private IColorClickerWebsocketServerMessageProcessor messageProcessor;
 
-	public ColorClickerEventServerSocket(IColorClickerWebsocketLogic logic , IColorClickerWebsocketMessageReader messageReader){
-		this.messageReader = messageReader;
+	public ColorClickerEventServerSocket(IColorClickerWebsocketLogic logic , IColorClickerWebsocketServerMessageProcessor messageProcessor){
+		this.messageProcessor = messageProcessor;
 	}
 
 	static HashSet<Session> sessions = new HashSet<>();
-	@javax.websocket.OnOpen
+	@OnOpen
 	public void onConnect(javax.websocket.Session session) {
 		sessions.add(session);
 		System.out.println("[Connected] SessionID:"+session.getId());
 	}
 
-	@javax.websocket.OnMessage
+	@OnMessage
 	public void onText(String message, javax.websocket.Session session) {
 		System.out.println("[Session ID] : " + session.getId() + " [Received] : " + message);
-		messageReader.MessageReader(message, session.getId());
+		messageProcessor.processMessage(message, session.getId());
 	}
 
-	@javax.websocket.OnClose
+	@OnClose
 	public void onClose(javax.websocket.CloseReason reason, javax.websocket.Session session) {
 		System.out.println("[Session ID] : " + session.getId() + "[Socket Closed: " + reason);
 		sessions.remove(session);
 	}
 
-	@javax.websocket.OnError
+	@OnError
 	public void onError(Throwable cause, javax.websocket.Session session) {
 		System.out.println("[Session ID] : " + session.getId() + "[ERROR]: ");
 		cause.printStackTrace(System.err);

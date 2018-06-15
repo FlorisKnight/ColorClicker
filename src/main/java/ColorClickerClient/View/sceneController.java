@@ -18,7 +18,7 @@ public class sceneController {
     sceneGame game;
 
     public sceneController(IColorClickerClientGUI application){
-        logic = new ColorClickerClientLogic(this, null);
+        logic = new ColorClickerClientLogic(this);
         this.application = application;
         signIn = new sceneSignIn(this, logic);
         signUp = new sceneSignUp(this, logic);
@@ -52,7 +52,7 @@ public class sceneController {
     }
 
     public void game(sceneGame scene){
-        application.Draw(scene.makeScene());
+        application.Draw(scene.getScene());
     }
 
 

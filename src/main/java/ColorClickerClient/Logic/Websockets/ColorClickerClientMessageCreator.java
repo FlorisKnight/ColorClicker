@@ -1,6 +1,6 @@
 package ColorClickerClient.Logic.Websockets;
 
-import WebsocketModels.jsonMessage;
+import Shared.jsonMessage;
 import com.google.gson.Gson;
 
 public class ColorClickerClientMessageCreator implements IColorClickerClientWebsocketMessageCreator{
@@ -9,7 +9,7 @@ public class ColorClickerClientMessageCreator implements IColorClickerClientWebs
         this.clientSocket = clientSocket;
     }
 
-    public void MessageCreator(String action, Object object){
+    public void MessageCreator(String action, String object){
         Gson gson = new Gson();
         String message = gson.toJson(new jsonMessage(action, object));
         clientSocket.sendMessageToServer(message);

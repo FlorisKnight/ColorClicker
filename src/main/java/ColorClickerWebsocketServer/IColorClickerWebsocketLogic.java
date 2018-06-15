@@ -1,34 +1,20 @@
 package ColorClickerWebsocketServer;
 
-import Models.Color;
-import Models.Game;
-import WebsocketModels.*;
+import javafx.scene.paint.Color;
 
 public interface IColorClickerWebsocketLogic {
 
-	/**
-	 * @param object
-	 */
-	public void CreateGame(CreateGame object, String session);
+	void setEventSockets(ColorClickerEventServerSocket eventSockets);
 
-	/**
-	 * @param object
-	 */
-	public void JoinGame(JoinGame object, String session);
+	void CreateGame(String gametype, String userId, String sessionId);
 
-	/**
-	 * @param object
-	 */
-	public void SquareClick(SquareClick object, String session);
+	void JoinGame(int gameId, String userId, String sessionId);
 
-	public void EndGame(String sessionID, String winner);
+	void EndGameMessage(String sessionID, String winner);
 
-	/**
-	 * @param squareColor
-	 * @param xPos
-	 * @param yPos
-	 */
-	public void UpdateSquares(javafx.scene.paint.Color squareColor, int xPos, int yPos, String sessionID);
+	void UpdateSquares(Color squareColor, int xPos, int yPos, String sessionID);
 
-	public void RemoveGame(Game game);
+	void RemoveGame(ColorClickerWebsocketGameLogic game);
+
+	ColorClickerWebsocketGameLogic getGame(String sessionId);
 }
