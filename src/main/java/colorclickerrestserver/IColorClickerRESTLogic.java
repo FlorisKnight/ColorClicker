@@ -1,25 +1,19 @@
 package colorclickerrestserver;
 
+import models.Score;
+
+import java.util.List;
+
 public interface IColorClickerRESTLogic {
 
-    /**
-     * @param email
-     * @param password
-     */
-    public int SignIn(char email, char password);
+    boolean SignIn(String facebookId);
 
-    /**
-     * @param email
-     * @param password
-     * @param name
-     */
-    public int SignUp(char email, char password, char name);
+    boolean SignUp(String facebookId, String name);
 
-    public String[][] getHighscores();
+    List<Score> getHighscores();
 
-    /**
-     * @param playerScores
-     */
-    public boolean saveScores(String[][] playerScores);
+    boolean saveScores(String username, int score, String gameType);
+
+    String getPlayer(String playerID);
 
 }

@@ -7,6 +7,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGameLogic {
+
     int gameId;
     Player player1;
     Player player2;
@@ -155,5 +156,13 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
         logic.UploadScores(player1.getName(), player1.getScore(), gametype);
         logic.UploadScores(player2.getName(), player2.getScore(), gametype);
         logic.RemoveGame(this);
+    }
+
+    public Player getPlayer2() {
+        return player2;
+    }
+
+    public Player[][] getField() {
+        return field;
     }
 }

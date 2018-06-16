@@ -13,7 +13,7 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 
-public abstract class ColorClickerClientRESTBaseLogic {
+public abstract class ColorClickerClientRESTBaseLogic{
     private final Gson gson = new Gson();
 
     private <T> T executeRequest(HttpUriRequest request, Class<T> clazz) {

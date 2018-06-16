@@ -13,10 +13,10 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 @Path("/ColorClicker")
-public class ColorClickerRESTResponse {
-    private static ColorClickerRESTLogic restLogic;
+public class ColorClickerRESTResponse implements IColorClickerRESTResponse{
+    private static IColorClickerRESTLogic restLogic;
 
-    public static void setRestLogic(ColorClickerRESTLogic restLogic) {
+    public static void setRestLogic(IColorClickerRESTLogic restLogic) {
         ColorClickerRESTResponse.restLogic = restLogic;
     }
 
@@ -83,7 +83,7 @@ public class ColorClickerRESTResponse {
 
     @GET
     @Path("/Highscores/get")
-    public Response get() {
+    public Response getHighscore() {
         List<Score> highscores = restLogic.getHighscores();
         if (highscores == null) {
             return Response.status(401).entity(ResponseHelper.getErrorResponseString()).build();

@@ -21,4 +21,8 @@ public interface IColorClickerWebsocketGameLogic {
     String getPlayer1SessionID();
 
     boolean checkAvailability();
+
+    Player getPlayer2();
+
+    Player[][] getField();
 }

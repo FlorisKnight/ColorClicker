@@ -4,7 +4,7 @@ import models.Score;
 
 import java.util.List;
 
-public class ColorClickerRESTLogic {
+public class ColorClickerRESTLogic implements IColorClickerRESTLogic{
     IColorClickerRestDB databaseConn;
 
     public ColorClickerRESTLogic(IColorClickerRestDB databaseConn) {
