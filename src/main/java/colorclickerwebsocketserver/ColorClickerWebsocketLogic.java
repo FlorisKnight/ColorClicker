@@ -1,6 +1,7 @@
 package colorclickerwebsocketserver;
 
 import colorclickerwebsocketserver.restapi.ColorClickerWebsocketRESTHandler;
+import colorclickerwebsocketserver.restapi.IColorClickerWebsocketRESTHandler;
 import javafx.scene.paint.Color;
 import models.Player;
 import models.Score;
@@ -9,18 +10,18 @@ import java.util.ArrayList;
 
 public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic {
     int gameId;
-    ColorClickerWebsocketRESTHandler rest;
-    ColorClickerWebsocketMessageCreator messageCreator;
-    ColorClickerEventServerSocket eventSockets;
+    IColorClickerWebsocketRESTHandler rest;
+    IColorClickerWebsocketMessageCreator messageCreator;
+    IColorClickerEventServerSocket eventSockets;
     ArrayList<ColorClickerWebsocketGameLogic> games;
 
-    public ColorClickerWebsocketLogic() {
-        rest = new ColorClickerWebsocketRESTHandler();
+    public ColorClickerWebsocketLogic(IColorClickerWebsocketRESTHandler rest) {
+        this.rest = rest;
         gameId = 0;
         games = new ArrayList<>();
     }
 
-    public void setEventSockets(ColorClickerEventServerSocket eventSockets) {
+    public void setEventSockets(IColorClickerEventServerSocket eventSockets) {
         this.eventSockets = eventSockets;
         messageCreator = new ColorClickerWebsocketMessageCreator(eventSockets);
     }
@@ -50,7 +51,7 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic {
         messageCreator.MessageCreator("UpdateSquares", MessageModelHelperServer.getUpdateSquareString(xPos, yPos, squareColor), sessionID);
     }
 
-    public ColorClickerWebsocketGameLogic getGame(String sessionID) {
+    public IColorClickerWebsocketGameLogic getGame(String sessionID) {
         for (ColorClickerWebsocketGameLogic g : games) {
             if (g.checkSessionID(sessionID)) {
                 return g;
@@ -64,7 +65,7 @@ public class ColorClickerWebsocketLogic implements IColorClickerWebsocketLogic {
         return new Player(sessionID, playerID, name, color);
     }
 
-    public void RemoveGame(ColorClickerWebsocketGameLogic game) {
+    public void RemoveGame(IColorClickerWebsocketGameLogic game) {
         games.remove(game);
     }
 

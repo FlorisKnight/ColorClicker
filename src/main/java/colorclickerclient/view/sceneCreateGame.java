@@ -16,7 +16,6 @@ public class sceneCreateGame {
     //Radio Buttons
     final ToggleGroup tgGametype = new ToggleGroup();
 
-    RadioButton rbClassic;
     RadioButton rbNormal;
     RadioButton rbFast;
 
@@ -80,17 +79,15 @@ public class sceneCreateGame {
 
         hbox.getChildren().addAll(btnCreateGame, btnBack);
 
-        rbClassic = new RadioButton("Classic");
         rbNormal = new RadioButton("Normal");
         rbFast = new RadioButton("Fast");
 
-        rbClassic.setToggleGroup(tgGametype);
         rbNormal.setToggleGroup(tgGametype);
         rbFast.setToggleGroup(tgGametype);
 
         rbNormal.setSelected(true);
 
-        vbox.getChildren().addAll(rbClassic, rbNormal, rbFast, hbox);
+        vbox.getChildren().addAll(rbNormal, rbFast, hbox);
 
 
         return scene;
@@ -101,9 +98,7 @@ public class sceneCreateGame {
     }
 
     public void CreateGame() {
-        if (rbClassic.isSelected())
-            logic.CreateGameSend("Classic");
-        else if (rbNormal.isSelected())
+        if (rbNormal.isSelected())
             logic.CreateGameSend("Normal");
         else if (rbFast.isSelected())
             logic.CreateGameSend("Fast");

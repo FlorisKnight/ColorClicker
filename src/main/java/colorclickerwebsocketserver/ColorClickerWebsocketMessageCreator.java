@@ -4,9 +4,9 @@ import com.google.gson.Gson;
 import shared.jsonMessage;
 
 public class ColorClickerWebsocketMessageCreator implements IColorClickerWebsocketMessageCreator {
-    ColorClickerEventServerSocket eventSockets;
+    IColorClickerEventServerSocket eventSockets;
 
-    public ColorClickerWebsocketMessageCreator(ColorClickerEventServerSocket eventSockets) {
+    public ColorClickerWebsocketMessageCreator(IColorClickerEventServerSocket eventSockets) {
         this.eventSockets = eventSockets;
     }
 

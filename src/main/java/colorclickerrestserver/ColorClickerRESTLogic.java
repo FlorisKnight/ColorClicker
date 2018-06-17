@@ -24,7 +24,7 @@ public class ColorClickerRESTLogic implements IColorClickerRESTLogic{
     }
 
     public boolean SignUp(String facebookId, String name) {
-        if (databaseConn.checkIdAvailability(facebookId) == 0 && databaseConn.checkNameAvailability(name) == 0)
+        if (databaseConn.checkAvailability(facebookId, "userId") == 0 && databaseConn.checkAvailability(name, "username") == 0)
             return databaseConn.registerPlayer(facebookId, name);
         else
             return false;

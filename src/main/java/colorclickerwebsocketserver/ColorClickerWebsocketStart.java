@@ -1,5 +1,7 @@
 package colorclickerwebsocketserver;
 
+import colorclickerwebsocketserver.restapi.ColorClickerWebsocketRESTHandler;
+import colorclickerwebsocketserver.restapi.IColorClickerWebsocketRESTHandler;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import org.eclipse.jetty.server.Server;
@@ -16,9 +18,10 @@ public class ColorClickerWebsocketStart extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        IColorClickerWebsocketLogic logic = new ColorClickerWebsocketLogic();
+        IColorClickerWebsocketRESTHandler rest = new ColorClickerWebsocketRESTHandler();
+        IColorClickerWebsocketLogic logic = new ColorClickerWebsocketLogic(rest);
         IColorClickerWebsocketServerMessageProcessor messageProcessor = new ColorClickerServerMessageProcessor(logic);
-        ColorClickerEventServerSocket socket = new ColorClickerEventServerSocket(logic, messageProcessor);
+        IColorClickerEventServerSocket socket = new ColorClickerEventServerSocket(logic, messageProcessor);
 
         logic.setEventSockets(socket);
 

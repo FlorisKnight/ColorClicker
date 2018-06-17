@@ -43,9 +43,8 @@ public class ColorClickerRESTServerDB implements IColorClickerRestDB {
 
     public boolean setHighscores(String playerName, int score, String gametype) {
         conn = Connection();
-        try {
-            String query = "Insert into highscores (username, score, gameType) values (?,?,?)";
-            PreparedStatement stmt = conn.prepareStatement(query);
+        String query = "Insert into highscores (username, score, gameType) values (?,?,?)";
+        try (PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setString(1, playerName);
             stmt.setInt(2, score);
             stmt.setString(3, gametype);
@@ -65,9 +64,8 @@ public class ColorClickerRESTServerDB implements IColorClickerRestDB {
 
     public boolean registerPlayer(String playerId, String playerName) {
         conn = Connection();
-        try {
-            String query = "INSERT into users (userId, username) values (? ,?)";
-            PreparedStatement stmt = conn.prepareStatement(query);
+        String query = "INSERT into users (userId, username) values (? ,?)";
+        try (PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setString(1, playerId);
             stmt.setString(2, playerName);
             stmt.executeUpdate();
@@ -86,9 +84,8 @@ public class ColorClickerRESTServerDB implements IColorClickerRestDB {
 
     public String getPlayer(String playerId) {
         conn = Connection();
-        try {
-            String query = "SELECT username FROM users WHERE userId = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
+        String query = "SELECT username FROM users WHERE userId = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)){
             stmt.setString(1, playerId);
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
@@ -108,12 +105,12 @@ public class ColorClickerRESTServerDB implements IColorClickerRestDB {
         return null;
     }
 
-    public int checkIdAvailability(String playerId) {
+    public int checkAvailability(String data, String compareTo) {
         conn = Connection();
-        try {
-            String query = "SELECT count(*) FROM users WHERE userId = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setString(1, playerId);
+        String query = "SELECT count(*) FROM users WHERE ? = ?";
+        try (PreparedStatement stmt = conn.prepareStatement(query)){
+            stmt.setString(1, compareTo);
+            stmt.setString(2, data);
             try (ResultSet rs = stmt.executeQuery()) {
                 while (rs.next()) {
                     return rs.getInt(1);
@@ -130,28 +127,4 @@ public class ColorClickerRESTServerDB implements IColorClickerRestDB {
         }
         return 0;
     }
-
-    public int checkNameAvailability(String name) {
-        conn = Connection();
-        try {
-            String query = "SELECT count(*) FROM users WHERE username = ?";
-            PreparedStatement stmt = conn.prepareStatement(query);
-            stmt.setString(1, name);
-            try (ResultSet rs = stmt.executeQuery()) {
-                while (rs.next()) {
-                    return rs.getInt(1);
-                }
-            }
-        } catch (SQLException e) {
-            System.out.println(e);
-        } finally {
-            try {
-                conn.close();
-            } catch (SQLException e) {
-                System.out.println(e);
-            }
-        }
-        return 0;
-    }
-
 }

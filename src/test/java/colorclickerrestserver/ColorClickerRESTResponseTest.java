@@ -2,6 +2,7 @@ package colorclickerrestserver;
 
 import Stubs.ColorClickerRESTdbStub;
 import colorclickerclient.Logic.restapi.ResponseHelper;
+import com.google.gson.Gson;
 import models.Score;
 import org.junit.Assert;
 import org.junit.Before;
@@ -18,6 +19,8 @@ public class ColorClickerRESTResponseTest {
     IColorClickerRestDB database = new ColorClickerRESTdbStub();
     IColorClickerRESTLogic logic = new ColorClickerRESTLogic(database);
     IColorClickerRESTResponse restResponse = new ColorClickerRESTResponse();
+    Response responseBoolTrue = Response.status(200).entity(ResponseHelper.getBooleanResultDtoResponseString(true)).build();
+    Gson gson = new Gson();
 
     @Before
     public void setRestLogic() {
@@ -26,31 +29,43 @@ public class ColorClickerRESTResponseTest {
 
     @Test
     public void signIn() {
-        Response r = restResponse.SignIn("{\"playerId\":\"1558375417606601\"}");
-        Assert.assertEquals(Response.status(200).entity(ResponseHelper.getBooleanResultDtoResponseString(true)).build(),r);
+        Response r = restResponse.SignIn("{\"playerId\":\"69420\"}");
+        String actual = gson.toJson(r, Response.class);
+        String expected = gson.toJson(responseBoolTrue, Response.class);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void signUp() {
-        Response r = restResponse.SignUp("{\"facebookId\":\"1558375417606601\",\"name\":\"FlorisKnight\"}");
-        Assert.assertEquals(Response.status(200).entity(ResponseHelper.getBooleanResultDtoResponseString(true)).build(), r);
+        Response r = restResponse.SignUp("{\"facebookId\":\"69420\",\"name\":\"Frank\"}");
+        String actual = gson.toJson(r, Response.class);
+        String expected = gson.toJson(responseBoolTrue, Response.class);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void getPlayer() {
-        Response r = restResponse.GetPlayer("{\"playerId\":\"1558375417606601\"}");
-        Assert.assertEquals(Response.status(200).entity(ResponseHelper.getGetPlayerResultDtcString("Frank")).build(), r);
+        Response r = restResponse.GetPlayer("{\"playerId\":\"69420\"}");
+        String actual = gson.toJson(r, Response.class);
+        Response expectedResponse = Response.status(200).entity(ResponseHelper.getGetPlayerResultDtcString("Frank")).build();
+        String expected = gson.toJson(expectedResponse, Response.class);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void setHighscore() {
-        Response r = restResponse.setHighscore("{\"name\":\"FlorisKnight\",\"score\":51,\"gameType\":\"Fast\"}");
-        Assert.assertEquals(Response.status(200).entity(ResponseHelper.getBooleanResultDtoResponseString(true)).build(), r);
+        Response r = restResponse.setHighscore("{\"name\":\"Frank\",\"score\":51,\"gameType\":\"Fast\"}");
+        String actual = gson.toJson(r, Response.class);
+        String expected = gson.toJson(responseBoolTrue, Response.class);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void getHighscore() {
         Response r = restResponse.getHighscore();
-        Assert.assertEquals(Response.status(200).entity(ResponseHelper.getHighscoresResultDtcString(new ArrayList<Score>())).build(), r);
+        String actual = gson.toJson(r, Response.class);
+        Response expectedResponse = Response.status(200).entity(ResponseHelper.getHighscoresResultDtcString(new ArrayList<Score>())).build();
+        String expected = gson.toJson(expectedResponse, Response.class);
+        Assert.assertEquals(expected, actual);
     }
 }

@@ -20,7 +20,7 @@ public class ColorClickerRESTLogicTest {
 
     @Test
     public void signUp() {
-        Assert.assertEquals(true,logic.SignUp("69420", "Frank"));
+        Assert.assertEquals(true,logic.SignUp("42069", "Burt"));
     }
 
     @Test

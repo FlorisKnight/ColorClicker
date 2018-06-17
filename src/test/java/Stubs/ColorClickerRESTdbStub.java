@@ -24,16 +24,26 @@ public class ColorClickerRESTdbStub implements IColorClickerRestDB{
 
     @Override
     public String getPlayer(String playerId) {
-        return "Frank";
+        if (playerId.equals("69420"))
+            return "Frank";
+        else
+            return null;
     }
 
     @Override
-    public int checkIdAvailability(String playerId) {
-        return 0;
-    }
-
-    @Override
-    public int checkNameAvailability(String name) {
-        return 0;
+    public int checkAvailability(String data, String compareTo) {
+        if (compareTo.equals("userId")) {
+            if (data.equals("69420"))
+                return 1;
+            else
+                return 0;
+        } else if (compareTo.equals("username")){
+            if (data.equals("Frank"))
+                return 1;
+            else
+                return 0;
+        }
+        else
+            return -1;
     }
 }

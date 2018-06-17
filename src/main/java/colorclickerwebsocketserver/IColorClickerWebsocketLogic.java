@@ -4,7 +4,7 @@ import javafx.scene.paint.Color;
 
 public interface IColorClickerWebsocketLogic {
 
-    void setEventSockets(ColorClickerEventServerSocket eventSockets);
+    void setEventSockets(IColorClickerEventServerSocket eventSockets);
 
     void CreateGame(String gametype, String userId, String sessionId);
 
@@ -14,9 +14,9 @@ public interface IColorClickerWebsocketLogic {
 
     void UpdateSquares(Color squareColor, int xPos, int yPos, String sessionID);
 
-    void RemoveGame(ColorClickerWebsocketGameLogic game);
+    void RemoveGame(IColorClickerWebsocketGameLogic game);
 
-    ColorClickerWebsocketGameLogic getGame(String sessionId);
+    IColorClickerWebsocketGameLogic getGame(String sessionId);
 
     void UploadScores(String name, int score, String gameType);
 

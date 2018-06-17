@@ -14,8 +14,6 @@ public interface IColorClickerRestDB {
 
     String getPlayer(String playerId);
 
-    int checkIdAvailability(String playerId);
-
-    int checkNameAvailability(String name);
+    int checkAvailability(String data, String compareTo);
 
 }

@@ -80,6 +80,8 @@ public class ColorClickerWebsocketGameLogic implements IColorClickerWebsocketGam
             gametime = 60;
         else if (gametype.equals("Fast"))
             gametime = 30;
+        else
+            gametime = 0;
 
         timer = new Timer();
         timer.schedule(new TimerTask() {

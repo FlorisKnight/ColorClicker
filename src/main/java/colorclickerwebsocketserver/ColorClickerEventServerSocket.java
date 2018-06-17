@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.HashSet;
 
 @ServerEndpoint(value = "/ColorClicker/")
-public class ColorClickerEventServerSocket {
+public class ColorClickerEventServerSocket implements IColorClickerEventServerSocket{
     IColorClickerWebsocketServerMessageProcessor messageProcessor;
     IColorClickerWebsocketLogic logic;
 
@@ -24,13 +24,13 @@ public class ColorClickerEventServerSocket {
     }
 
     @OnMessage
-    public void onText(String message, javax.websocket.Session session) {
+    public void onText(String message, Session session) {
         System.out.println("[Session ID] : " + session.getId() + " [Received] : " + message);
         messageProcessor.processMessage(message, session.getId());
     }
 
     @OnClose
-    public void onClose(javax.websocket.CloseReason reason, javax.websocket.Session session) {
+    public void onClose(javax.websocket.CloseReason reason, Session session) {
         System.out.println("[Session ID] : " + session.getId() + "[Socket Closed: " + reason);
         try {
             logic.RemoveGame(logic.getGame(session.getId()));
@@ -41,7 +41,7 @@ public class ColorClickerEventServerSocket {
     }
 
     @OnError
-    public void onError(Throwable cause, javax.websocket.Session session) {
+    public void onError(Throwable cause, Session session) {
         System.out.println("[Session ID] : " + session.getId() + "[ERROR]: ");
         cause.printStackTrace(System.err);
     }

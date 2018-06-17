@@ -1,18 +1,19 @@
 package colorclickerwebsocketserver;
 
-import Stubs.ColorClickerWebsocketLogicStud;
+import Stubs.ColorClickerWebsocketLogicStub;
+import Stubs.ColorClickerWebsocketRESTHandlerStub;
+import colorclickerwebsocketserver.restapi.IColorClickerWebsocketRESTHandler;
 import javafx.scene.paint.Color;
 import models.Player;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-public class IColorClickerWebsocketGameLogicTest {
-    Player player1 = new Player("69420","SessionId1", "Burt", Color.RED);
-    Player player2 = new Player("42069","SessionId2", "Frank", Color.BLUE);
-    IColorClickerWebsocketLogic logic = new ColorClickerWebsocketLogicStud();
+public class ColorClickerWebsocketGameLogicTest {
+    Player player1 = new Player("42069","SessionId1", "Burt", Color.RED);
+    Player player2 = new Player("69420","SessionId2", "Frank", Color.BLUE);
+    IColorClickerWebsocketRESTHandler rest = new ColorClickerWebsocketRESTHandlerStub();
+    IColorClickerWebsocketLogic logic = new ColorClickerWebsocketLogicStub();
     IColorClickerWebsocketGameLogic game = new ColorClickerWebsocketGameLogic(0,player1, logic, "Normal");
 
 
@@ -26,14 +27,14 @@ public class IColorClickerWebsocketGameLogicTest {
     @Test
     public void squareClick() {
         game.StartGame();
-        game.SquareClick("42069", 0, 0);
+        game.SquareClick("69420", 0, 0);
         Player[][] field = game.getField();
         Assert.assertEquals(player2, field[0][0]);
     }
 
     @Test
     public void checkSessionID() {
-        Assert.assertTrue(game.checkSessionID("42069"));
+        Assert.assertTrue(game.checkSessionID("69420"));
     }
 
     @Test
@@ -53,7 +54,7 @@ public class IColorClickerWebsocketGameLogicTest {
 
     @Test
     public void getPlayer1SessionID() {
-        Assert.assertEquals("69420", game.getPlayer1SessionID());
+        Assert.assertEquals("42069", game.getPlayer1SessionID());
     }
 
     @Test
