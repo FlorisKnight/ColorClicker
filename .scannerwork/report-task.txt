@@ -2,5 +2,5 @@ projectKey=my:SE3_Big_Idea_ColorClicker
 serverUrl=http://localhost:9000
 serverVersion=7.0.0.36138
 dashboardUrl=http://localhost:9000/dashboard/index/my:SE3_Big_Idea_ColorClicker
-ceTaskId=AWQNFCFs2qYU_DjPbhex
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWQNFCFs2qYU_DjPbhex
+ceTaskId=AWQRtx4_gCJ_h9KMRUiB
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWQRtx4_gCJ_h9KMRUiB

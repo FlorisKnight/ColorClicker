@@ -5,6 +5,7 @@ import colorclickerclient.Logic.websockets.messagemodels.CreateGame;
 import com.google.gson.Gson;
 import org.junit.Assert;
 import org.junit.Test;
+import shared.jsonMessage;
 
 import static org.junit.Assert.*;
 
@@ -17,7 +18,8 @@ public class ColorClickerClientMessageCreatorTest {
         String object = gson.toJson(new CreateGame("Fast","42069"));
         messageCreator.MessageCreator("CreateGame", object);
         String actual = socketStub.getMessage();
-        String expected = "{\"message\":\"CreateGame\",\"object\":\"{\\\"gametype\\\":\\\"Fast\\\",\\\"userId\\\":\\\"42069\\\"}\"}";
+        String objectExpected = gson.toJson(new CreateGame("Fast","42069"));
+        String expected = gson.toJson(new jsonMessage("CreateGame", objectExpected));
         Assert.assertEquals(expected,actual);
     }
 }

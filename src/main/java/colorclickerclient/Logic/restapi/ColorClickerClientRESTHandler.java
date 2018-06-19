@@ -28,7 +28,7 @@ public class ColorClickerClientRESTHandler extends ColorClickerClientRESTBaseLog
 
     @Override
     public List<Score> getHighscores() {
-        HighscoresResultDto result = executeQueryGet(getQuery("/Highscores/get/"), HighscoresResultDto.class);
+        HighscoresResultDto result = executeQueryGet(getQuery("Highscores/get/"), HighscoresResultDto.class);
         if (result.isSuccess()) {
             return result.getHighscores();
         } else

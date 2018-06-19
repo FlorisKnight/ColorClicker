@@ -11,6 +11,7 @@ import models.Score;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGameLogic, IColorClickerClientGameLogic, IColorClickerClientHighscoreLogic, IColorClickerClientSignInSignUpLogic {
     IColorClickerClientWebsocketMessageCreator messageCreator;
@@ -19,6 +20,7 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
     sceneController controller;
     IColorClickerClientRESTHandler restHandler;
     FacebookOAuth oAuth;
+    String regex = "^[a-zA-Z0-9_-]*$";
 
     public ColorClickerClientLogic(sceneController controller) {
         this.controller = controller;
@@ -43,16 +45,18 @@ public class ColorClickerClientLogic implements IColorClickerClientCreateJoinGam
     }
 
     public void SignUp(String name) {
-        String facebookId = null;
-        try {
-            facebookId = oAuth.authUser();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        if (facebookId != null && name != null && restHandler.SignUp(facebookId, name)) {
-            userId = facebookId;
-            websocketConnect();
-            controller.homeScene();
+        if (name.length() >= 4 && Pattern.matches(regex, name)) {
+            String facebookId = null;
+            try {
+                facebookId = oAuth.authUser();
+            } catch (Exception e) {
+                System.out.println(e);
+            }
+            if (facebookId != null && name != null && restHandler.SignUp(facebookId, name)) {
+                userId = facebookId;
+                websocketConnect();
+                controller.homeScene();
+            }
         }
     }
 

@@ -50,6 +50,7 @@ public class sceneHighscores {
         javafx.scene.control.ScrollPane scrollPane = new javafx.scene.control.ScrollPane(gridLeaderboard);
         scrollPane.setMaxWidth(500);
         scrollPane.setMinWidth(500);
+        scrollPane.setMaxHeight(400);
 
         //Define vbox pane
         VBox vbox = new VBox();
